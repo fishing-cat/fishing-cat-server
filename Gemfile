@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.2'
   gem 'byebug', platform: :mri
 end
 
