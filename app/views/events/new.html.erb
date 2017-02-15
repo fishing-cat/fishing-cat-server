@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <%= form_tag do |f| %>
+    <%= hidden_field_tag :fid, params[:fid] %>
+    <%= label_tag :name, 'User Name' %>
+    <%= text_field_tag :name, '', id:'name' %>
+    <br>
+    <%= label_tag :password, 'User Password' %>
+    <%= password_field_tag '', '', id:'password' %>
+    <br>
+    <%= submit_tag 'Login' %>
+    <% end %>
+  </body>
+</html>
