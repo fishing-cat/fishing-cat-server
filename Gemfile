@@ -9,9 +9,13 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap-table-rails', '~> 1.11'
 gem 'search_cop', '~> 1.0'
-gem 'sqlite3'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'dotenv-rails', '~> 2.2'
   gem 'byebug', platform: :mri
 end
