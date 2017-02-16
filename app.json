@@ -1,0 +1,39 @@
+{
+  "name": "Fishing Cat Server",
+  "description": "Fishing Cat Server",
+  "repository": "https://github.com/fishing-cat/fishing-cat-server",
+  "website": "https://github.com/fishing-cat/fishing-cat-server",
+  "keywords": [
+    "phishing",
+    "security",
+    "ruby",
+    "rails",
+    "cat",
+    "Rails 5"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
+  },
+  "addons": ["heroku-postgresql"],
+  "success_url": "/",
+  "env": {
+    "RAILS_FORCE_SSL": {
+      "value": "enabled"
+    },
+    "FISHING_CAT_REDIRECT_URL": {
+      "value": "/results"
+    },
+    "FISHING_CAT_ADMIN_REALM": {
+      "value": "admin"
+    },
+    "FISHING_CAT_ADMIN_USERNAME": {
+      "value": "admin"
+    },
+    "FISHING_CAT_ADMIN_PASSWORD": {
+      "value": "admin"
+    },
+  },
+  "buildpacks": [{
+    "url": "heroku/ruby"
+  }]
+}
