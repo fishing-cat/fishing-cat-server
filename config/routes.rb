@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get '/', to:'events#new', as:'new_event'
-  post '/', to:'events#create', as:'create_event'
+  get :admin, to:'admin#show', format:false
   namespace :admin do
+    resources :events, only:[:index], format:false
     namespace :events do
-      resources :search, only:[:index]
+      resources :searches, only:[:index], format:'json'
     end
-    resources :events, only:[:index]
   end
+  get '/result', to:'cats#result', as:'result_cat'
+  get '/', to:'cats#new',    as:'new_cat'
+  post '/', to:'cats#create', as:'cats'
 end

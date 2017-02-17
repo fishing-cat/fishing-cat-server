@@ -1,4 +1,4 @@
-class Admin::Events::SearchController < ApplicationController
+class Admin::Events::SearchesController < ApplicationController
 
   before_action :authenticate
 
