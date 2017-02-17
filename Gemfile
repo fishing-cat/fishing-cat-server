@@ -27,7 +27,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
-  gem 'pry-doc', require:false
   gem 'pry-coolline'
   gem 'pry-byebug', platforms: :mri
 end
