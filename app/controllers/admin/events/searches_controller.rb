@@ -1,6 +1,4 @@
-class Admin::Events::SearchesController < ApplicationController
-
-  before_action :authenticate
+class Admin::Events::SearchesController < Admin::ApplicationController
 
   def index
     relation = Event.search(search)

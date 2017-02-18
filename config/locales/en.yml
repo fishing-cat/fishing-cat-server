@@ -18,3 +18,10 @@ en:
         http_accept_language: HTTP Accept Language
         http_dnt: HTTP DNT
         params: Params
+  layouts:
+    admin:
+      application:
+        title: Fishing Cat Server
+        events: Events
+        settings: settings
+        logout: Logout

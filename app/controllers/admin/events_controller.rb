@@ -1,6 +1,4 @@
-class Admin::EventsController < ApplicationController
-
-  before_action :authenticate
+class Admin::EventsController < Admin::ApplicationController
 
   def index
   end
