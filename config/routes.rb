@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       resources :searches, only:[:index], format:'json'
     end
     resources :people, only:[:index], format:false
+  namespace :fishing, path:'/' do
+    get  '/:cid/:pid',        to:'events#new',    format:false, as:'new_cat'
+    post '/:cid/:pid',        to:'events#create', format:false, as:'cats'
+    get  '/images/:cid/:pid', to:'images#show',   format:/png/, as:'image'
   end
-  get '/result', to:'cats#result', as:'result_cat'
-  get '/', to:'cats#new',    as:'new_cat'
-  post '/', to:'cats#create', as:'cats'
 end
