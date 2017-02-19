@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get :admin, to:'admin#show', format:false
   namespace :admin do
     root to:'root#show', format:false
     resources :events, only:[:index], format:false
