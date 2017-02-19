@@ -13,6 +13,8 @@
       data-side-pagination="server"
       data-pagination="true"
       data-show-refresh="true"
+      data-sort-order="desc"
+      data-page-size="100"
       data-page-list="[100,1000,10000]">
       <thead>
         <tr>
@@ -24,7 +26,7 @@
           <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
           <th data-field="request_path" data-sortable="true" data-visible="false"><%= t(".request_path") %></th>
           <th data-field="query_string" data-sortable="true" data-visible="false"><%= t(".query_string") %></th>
-          <th data-field="request_uri" data-sortable="true" data-visible="false"><%= t(".request_uri") %></th>
+          <th data-field="request_uri" data-sortable="true"><%= t(".request_uri") %></th>
           <th data-field="http_dnt" data-sortable="true" data-visible="false"><%= t(".http_dnt") %></th>
           <th data-field="http_referer" data-sortable="true" data-visible="false"><%= t(".http_referer") %></th>
           <th data-field="http_user_agent" data-sortable="true" data-visible="false"><%= t(".http_user_agent") %></th>
