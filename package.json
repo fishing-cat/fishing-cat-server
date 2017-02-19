@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "fingerprintjs2": "^1.5.0"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ]
+}

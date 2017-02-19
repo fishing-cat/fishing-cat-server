@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     end
   end
   namespace :fishing, path:'/' do
-    get  '/:cid/:pid',        to:'events#new',    format:false, as:'new_cat'
-    post '/:cid/:pid',        to:'events#create', format:false, as:'cats'
-    get  '/images/:cid/:pid', to:'images#show',   format:/png/, as:'image'
+    get  '/:cid/:pid(/:fingerprint)',        to:'events#new',    format:false, as:'new_cat'
+    post '/:cid/:pid(/:fingerprint)',        to:'events#create', format:false, as:'cats'
+    get  '/images/:cid/:pid(/:fingerprint)', to:'images#show',   format:/png/, as:'image'
   end
 end

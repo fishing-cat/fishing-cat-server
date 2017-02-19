@@ -2,15 +2,15 @@
 <html>
   <head>
     <title>Login</title>
-
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track':'reload' %>
-
+    <%= javascript_include_tag 'fishing' %>
   </head>
   <body>
     <h1>Login</h1>
     <%= form_tag do |f| %>
     <%= hidden_field_tag :fid, params[:fid] %>
+    <%= hidden_field_tag :pid, params[:pid] %>
+    <%= hidden_field_tag :fingerprint, params[:fingerprint] %>
     <%= label_tag :name, 'User Name' %>
     <%= text_field_tag :name, '', id:'name' %>
     <br>

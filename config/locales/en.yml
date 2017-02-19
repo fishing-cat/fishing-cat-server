@@ -7,6 +7,7 @@ en:
         id: ID
         cid: CID
         pid: PID
+        fingerprint: Fingerprint
         remote_ip: IP
         request_method: Method
         request_path: Path

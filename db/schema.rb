@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170215054721) do
   create_table "events", force: :cascade do |t|
     t.string   "cid"
     t.string   "pid"
+    t.string   "fingerprint"
     t.string   "remote_ip"
     t.text     "query_string"
     t.text     "request_method"
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170215054721) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.index ["cid"], name: "index_events_on_cid"
+    t.index ["fingerprint"], name: "index_events_on_fingerprint"
     t.index ["http_accept"], name: "index_events_on_http_accept"
     t.index ["http_accept_encoding"], name: "index_events_on_http_accept_encoding"
     t.index ["http_accept_language"], name: "index_events_on_http_accept_language"
