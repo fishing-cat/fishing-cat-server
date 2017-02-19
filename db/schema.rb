@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20170215054721) do
 
   create_table "events", force: :cascade do |t|
     t.string   "cid"
+    t.string   "pid"
     t.string   "remote_ip"
     t.text     "query_string"
     t.text     "request_method"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170215054721) do
     t.index ["http_referer"], name: "index_events_on_http_referer"
     t.index ["http_user_agent"], name: "index_events_on_http_user_agent"
     t.index ["params"], name: "index_events_on_params"
+    t.index ["pid"], name: "index_events_on_pid"
     t.index ["query_string"], name: "index_events_on_query_string"
     t.index ["remote_ip"], name: "index_events_on_remote_ip"
     t.index ["request_method"], name: "index_events_on_request_method"

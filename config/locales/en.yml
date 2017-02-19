@@ -6,6 +6,7 @@ en:
         created_at: Created At
         id: ID
         cid: CID
+        pid: PID
         remote_ip: IP
         request_method: Method
         request_path: Path

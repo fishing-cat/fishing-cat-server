@@ -9,6 +9,7 @@ class Event < ApplicationRecord
   def self.log(params, request)
     event = {
       cid: params[:cid],
+      pid: params[:pid],
       remote_ip: request.remote_ip,
       query_string: request.query_string,
       request_method: request.request_method,
