@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :searches, only:[:index], format:'json'
     end
     resources :people, only:[:index], format:false
+    namespace :people do
+      resources :searches, only:[:index], format:'json'
+    end
+  end
   namespace :fishing, path:'/' do
     get  '/:cid/:pid',        to:'events#new',    format:false, as:'new_cat'
     post '/:cid/:pid',        to:'events#create', format:false, as:'cats'
