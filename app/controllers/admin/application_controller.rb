@@ -1,5 +1,7 @@
 class Admin::ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
+  before_action :authenticate
 
   def authenticate
     authenticate_or_request_with_http_digest(Settings.admin_realm) do |username|
