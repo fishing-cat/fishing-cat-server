@@ -4,7 +4,7 @@
 #= require bootstrap-table
 #= require extensions/bootstrap-table-mobile
 
-@request_method = (value, row) ->
+@request_method_formatter = (value, row) ->
   if value == 'GET'
     return "<span class=\"label label-primary\">#{value}</span>"
   if value == 'POST'
