@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(version: 20170215054721) do
     t.text     "http_accept_encoding"
     t.text     "http_accept_language"
     t.text     "params"
+    t.string   "controller"
+    t.string   "action"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.index ["action"], name: "index_events_on_action"
     t.index ["cid"], name: "index_events_on_cid"
+    t.index ["controller"], name: "index_events_on_controller"
     t.index ["fingerprint"], name: "index_events_on_fingerprint"
     t.index ["http_accept"], name: "index_events_on_http_accept"
     t.index ["http_accept_encoding"], name: "index_events_on_http_accept_encoding"

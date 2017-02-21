@@ -20,6 +20,8 @@ en:
         http_accept_language: HTTP Accept Language
         http_dnt: HTTP DNT
         params: Params
+        controller: Controller
+        action: Action
     reports:
       index:
         title: Reports

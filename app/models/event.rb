@@ -23,6 +23,8 @@ class Event < ApplicationRecord
       http_accept_encoding: request.accept_encoding,
       http_accept_language: request.accept_language,
       params: params.to_json,
+      controller: params[:controller],
+      action: params[:action],
     }
     Event.create(event)
   end
