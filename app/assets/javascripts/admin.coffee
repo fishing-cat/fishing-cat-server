@@ -1,8 +1,10 @@
 #= require jquery
 #= require jquery_ujs
+#= require tableexport.jquery.plugin/tableExport
 #= require bootstrap-sprockets
 #= require bootstrap-table
 #= require extensions/bootstrap-table-mobile
+#= require extensions/bootstrap-table-export
 
 @request_method_formatter = (value, row) ->
   if value == 'GET'
