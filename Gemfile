@@ -30,6 +30,7 @@ group :development do
   gem 'pry-rails'
   gem 'pry-coolline'
   gem 'pry-byebug', platforms: :mri
+  gem 'i18n-tasks', require:false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
