@@ -1,11 +1,11 @@
 module IconHelper
 
-  def icon_people(options = {})
-    font_awesome_icon('users', options)
-  end
-
   def icon_events(options = {})
     font_awesome_icon('calendar', options)
+  end
+
+  def icon_reports(options = {})
+    font_awesome_icon('file-text-o', options)
   end
 
   private

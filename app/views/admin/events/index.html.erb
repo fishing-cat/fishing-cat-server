@@ -1,42 +1,40 @@
-<div class="container">
-  <ol class="breadcrumb">
-    <li class="active"><%= t('.events') %></li>
-  </ol>
-  <div class="alt-table-responsive">
-    <table
-      data-toggle="table"
-      data-search="true"
-      data-show-columns="true"
-      data-mobile-responsive="true"
-      data-classes="table table-no-bordered table-hover"
-      data-url="<%= url_for(admin_events_searches_path(format:'json')) %>"
-      data-side-pagination="server"
-      data-pagination="true"
-      data-show-refresh="true"
-      data-sort-order="desc"
-      data-page-size="100"
-      data-page-list="[100,1000,10000]">
-      <thead>
-        <tr>
-          <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
-          <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
-          <th data-field="pid" data-sortable="true"><%= t(".pid") %></th>
-          <th data-field="fingerprint" data-sortable="true"><%= t(".fingerprint") %></th>
-          <th data-field="remote_ip" data-sortable="true"><%= t(".remote_ip") %></th>
-          <th data-field="request_method" data-sortable="true" data-formatter="request_method"><%= t(".request_method") %></th>
-          <th data-field="params" data-sortable="true" data-visible="false"><%= t(".params") %></th>
-          <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
-          <th data-field="request_path" data-sortable="true" data-visible="false"><%= t(".request_path") %></th>
-          <th data-field="query_string" data-sortable="true" data-visible="false"><%= t(".query_string") %></th>
-          <th data-field="request_uri" data-sortable="true"><%= t(".request_uri") %></th>
-          <th data-field="http_dnt" data-sortable="true" data-visible="false"><%= t(".http_dnt") %></th>
-          <th data-field="http_referer" data-sortable="true" data-visible="false"><%= t(".http_referer") %></th>
-          <th data-field="http_user_agent" data-sortable="true" data-visible="false"><%= t(".http_user_agent") %></th>
-          <th data-field="http_accept" data-sortable="true" data-visible="false"><%= t(".http_accept") %></th>
-          <th data-field="http_accept_encoding" data-sortable="true" data-visible="false"><%= t(".http_accept_encoding") %></th>
-          <th data-field="http_accept_language" data-sortable="true" data-visible="false"><%= t(".http_accept_language") %></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
+<ol class="breadcrumb">
+  <li class="active"><%= t('.events') %></li>
+</ol>
+<div class="alt-table-responsive">
+  <table
+    data-toggle="table"
+    data-search="true"
+    data-show-columns="true"
+    data-mobile-responsive="true"
+    data-classes="table table-no-bordered table-hover"
+    data-url="<%= url_for(admin_events_searches_path(format:'json')) %>"
+    data-side-pagination="server"
+    data-pagination="true"
+    data-show-refresh="true"
+    data-sort-order="desc"
+    data-page-size="100"
+    data-page-list="[100,1000,10000]">
+    <thead>
+      <tr>
+        <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
+        <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
+        <th data-field="pid" data-sortable="true"><%= t(".pid") %></th>
+        <th data-field="fingerprint" data-sortable="true"><%= t(".fingerprint") %></th>
+        <th data-field="remote_ip" data-sortable="true"><%= t(".remote_ip") %></th>
+        <th data-field="request_method" data-sortable="true" data-formatter="request_method"><%= t(".request_method") %></th>
+        <th data-field="params" data-sortable="true" data-visible="false"><%= t(".params") %></th>
+        <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
+        <th data-field="request_path" data-sortable="true" data-visible="false"><%= t(".request_path") %></th>
+        <th data-field="query_string" data-sortable="true" data-visible="false"><%= t(".query_string") %></th>
+        <th data-field="request_uri" data-sortable="true"><%= t(".request_uri") %></th>
+        <th data-field="http_dnt" data-sortable="true" data-visible="false"><%= t(".http_dnt") %></th>
+        <th data-field="http_referer" data-sortable="true" data-visible="false"><%= t(".http_referer") %></th>
+        <th data-field="http_user_agent" data-sortable="true" data-visible="false"><%= t(".http_user_agent") %></th>
+        <th data-field="http_accept" data-sortable="true" data-visible="false"><%= t(".http_accept") %></th>
+        <th data-field="http_accept_encoding" data-sortable="true" data-visible="false"><%= t(".http_accept_encoding") %></th>
+        <th data-field="http_accept_language" data-sortable="true" data-visible="false"><%= t(".http_accept_language") %></th>
+      </tr>
+    </thead>
+  </table>
 </div>
