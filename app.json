@@ -28,7 +28,7 @@
     },
     "FISHING_CAT_ADMIN_PASSWORD": {
       "value": "admin"
-    },
+    }
   },
   "buildpacks": [{
     "url": "heroku/nodejs"
