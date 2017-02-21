@@ -39,7 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (6.7.3)
+    autoprefixer-rails (6.7.4)
       execjs
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -104,7 +104,7 @@ GEM
       coolline (~> 0.5)
     pry-rails (0.3.5)
       pry (>= 0.9.10)
-    puma (3.7.0)
+    puma (3.7.1)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
