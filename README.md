@@ -25,7 +25,6 @@ Herokuのアカウントを作成の上、下記のボタンをクリックし�
 
 |環境変数|説明|例|
 |-----|-----|-----|
-| `FISHING_CAT_REDIRECT_URL` | ウェブフォームから情報を送信した後にリダイレクトさせるURLを設定します。フィッシングサイトの訓練であることを説明するウェブページのURL等を設定します。 | /results or http://example.net |
 | `FISHING_CAT_ADMIN_REALM` | 管理者用ページはDigest認証で保護されます。この環境変数にはDigest認証に使用する認証領域（realm）を指定します。| admin |
 | `FISHING_CAT_ADMIN_USERNAME` | 管理者のユーザ名を設定します。 | admin |
 | `FISHING_CAT_ADMIN_PASSWORD` | 管理者のパスワードを設定します。平文か下記のようなプログラムで生成したハッシュ値を指定します。 | admin |
@@ -45,10 +44,17 @@ $ echo -n 'username:realm:password' | md5
 
 ## URL
 
-* `/admin/`: 管理者用のページです。イベントの履歴を閲覧できます。
-* `/?cid=[CID]`: 訓練用サイトのウェブフォームです。このURLにアクセスしたり送信ボタンをクリックすると各種情報がデータベースに記録されます。CIDは `Cat ID` の略で猫の識別子です。訓練対象者の振る舞いを追跡するために使用します。
-* `/results`: 訓練結果のページです。訓練対象者がウェブフォームに何らかの入力を行い送信した後に、このページへ遷移させて説明を実施することを想定しています。
+* **GET** `/images/:cid/:pid/:fingerprint`: トラッキングピクセルのURLです。PNGファイルを返します。HTMLメールの `img` 要素の `src` 属性に指定することでメールの開封を追跡します。
+* **GET** `/:cid/:pid/:fingerprint`: 訓練用サイトのウェブフォームです。このURLにアクセスすることでHTMLメールのリンクのクリックを追跡します。
+* **POST** `/:cid/:pid/:fingerprint`: 上記のウェブフォームの送信ボタンを押した際にデータが送信されたことを追跡します。
+* **GET** `/result/:cid/:pid/:fingerprint`: 訓練結果のページです。訓練対象者がウェブフォームの送信ボタンを押した後にリダイレクトされます。最終的にのページへ遷移させて訓練であることを説明する用途を想定しています。
+* `/admin`: 管理者用のページです。
 
+| Param | Name |
+|-----|-----|-----|
+| `:cid` | Campaign ID |
+| `:pid` | Person ID |
+| `:fingerprint` | Fingerprint |
 
 ## License
 
