@@ -20,9 +20,6 @@
     "RAILS_FORCE_SSL": {
       "value": "enabled"
     },
-    "FISHING_CAT_REDIRECT_URL": {
-      "value": "/result"
-    },
     "FISHING_CAT_ADMIN_REALM": {
       "value": "admin"
     },

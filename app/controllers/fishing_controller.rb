@@ -14,8 +14,7 @@ class FishingController < ActionController::Base
   end
 
   def submitted_data
-    # TODO with params
-    redirect_to(Settings.redirect_url || result_path)
+    redirect_to(fishing_result_path(cid:params[:cid], pid:params[:pid], fingerprint:params[:fingerprint]))
   end
 
   def viewed_result
