@@ -3,10 +3,10 @@ en:
     events:
       index:
         title: Events
-        created_at: Created At
+        created_at: Time
         id: ID
-        cid: CID
-        pid: PID
+        cid: Campaign ID
+        pid: Person ID
         fingerprint: Fingerprint
         remote_ip: IP
         request_method: Method
