@@ -5,5 +5,10 @@
   },
   "cacheDirectories": [
     "node_modules"
-  ]
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fishing-cat/fishing-cat-server.git"
+  }
 }
