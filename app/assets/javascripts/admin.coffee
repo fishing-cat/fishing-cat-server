@@ -2,10 +2,9 @@
 #= require jquery_ujs
 #= require tableexport.jquery.plugin/tableExport
 #= require bootstrap-sprockets
-#= require bootstrap-table
-#= require extensions/bootstrap-table-mobile
-#= require extensions/bootstrap-table-export
-
+#= require bootstrap-table/dist/bootstrap-table
+#= require bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile
+#= require bootstrap-table/dist/extensions/export/bootstrap-table-export
 
 @action_formatter = (value, row) ->
   if value == 'opened_email'

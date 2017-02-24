@@ -8,7 +8,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'bootstrap-table-rails', '~> 1.11'
 gem 'search_cop', '~> 1.0'
 gem 'font-awesome-rails', '~> 4.7'
 
