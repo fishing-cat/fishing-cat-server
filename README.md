@@ -44,17 +44,16 @@ $ echo -n 'username:realm:password' | md5
 
 ## URL
 
-* **GET** `/images/:cid/:pid/:fingerprint`: トラッキングピクセルのURLです。PNGファイルを返します。HTMLメールの `img` 要素の `src` 属性に指定することでメールの開封を追跡します。
-* **GET** `/:cid/:pid/:fingerprint`: 訓練用サイトのウェブフォームです。このURLにアクセスすることでHTMLメールのリンクのクリックを追跡します。
-* **POST** `/:cid/:pid/:fingerprint`: 上記のウェブフォームの送信ボタンを押した際にデータが送信されたことを追跡します。
-* **GET** `/result/:cid/:pid/:fingerprint`: 訓練結果のページです。訓練対象者がウェブフォームの送信ボタンを押した後にリダイレクトされます。最終的にのページへ遷移させて訓練であることを説明する用途を想定しています。
+* **GET** `/images/:cid/:pid`: トラッキングピクセルのURLです。PNGファイルを返します。HTMLメールの `img` 要素の `src` 属性に指定することでメールの開封を追跡します。
+* **GET** `/:cid/:pid`: 訓練用サイトのウェブフォームです。このURLにアクセスすることでHTMLメールのリンクのクリックを追跡します。
+* **POST** `/:cid/:pid`: 上記のウェブフォームの送信ボタンを押した際にデータが送信されたことを追跡します。
+* **GET** `/result/:cid/:pid`: 訓練結果のページです。訓練対象者がウェブフォームの送信ボタンを押した後にリダイレクトされます。最終的にのページへ遷移させて訓練であることを説明する用途を想定しています。
 * `/admin`: 管理者用のページです。
 
 | Param | Name |
 |-----|-----|-----|
 | `:cid` | Campaign ID |
 | `:pid` | Person ID |
-| `:fingerprint` | Fingerprint |
 
 ## License
 

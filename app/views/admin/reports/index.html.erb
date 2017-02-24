@@ -43,17 +43,3 @@
     <% end %>
   </tbody>
 </table>
-<table class="table table-hover table-condensed">
-  <thead>
-    <tr>
-      <th>Fingerprint</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% Event.where.not(fingerprint:nil).uniq.pluck(:fingerprint).each do |fingerprint| %>
-    <tr>
-      <td><%= fingerprint %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>

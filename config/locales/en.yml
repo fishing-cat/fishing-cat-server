@@ -7,7 +7,6 @@ en:
         id: ID
         cid: Campaign ID
         pid: Person ID
-        fingerprint: Fingerprint
         remote_ip: IP
         request_method: Method
         request_path: Path

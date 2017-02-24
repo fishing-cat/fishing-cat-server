@@ -10,8 +10,8 @@ Rails.application.routes.draw do
       resources :searches, only:[:index], format:'json'
     end
   end
-  get  '/result/(:cid/(:pid(/:fingerprint)))', to:'fishing#viewed_result',  format:false, as:'fishing_result'
-  get  '/images/(:cid/(:pid(/:fingerprint)))', to:'fishing#opened_email',   format:false
-  get  '(/(:cid/(:pid(/:fingerprint))))',      to:'fishing#clicked_link',   format:false
-  post '(/(:cid/(:pid(/:fingerprint))))',      to:'fishing#submitted_data', format:false
+  get  '/result/(:cid/(:pid))', to:'fishing#viewed_result',  format:false, as:'fishing_result'
+  get  '/images/(:cid/(:pid))', to:'fishing#opened_email',   format:false
+  get  '(/(:cid/(:pid)))',      to:'fishing#clicked_link',   format:false
+  post '(/(:cid/(:pid)))',      to:'fishing#submitted_data', format:false
 end

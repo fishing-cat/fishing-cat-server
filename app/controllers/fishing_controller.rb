@@ -14,7 +14,7 @@ class FishingController < ActionController::Base
   end
 
   def submitted_data
-    redirect_to(fishing_result_path(cid:params[:cid], pid:params[:pid], fingerprint:params[:fingerprint]))
+    redirect_to(fishing_result_path(cid:params[:cid], pid:params[:pid]))
   end
 
   def viewed_result

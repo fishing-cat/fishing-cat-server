@@ -3,7 +3,6 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     create_table :events do |t|
       t.string :cid
       t.string :pid
-      t.string :fingerprint
       t.string :remote_ip
       t.text   :query_string
       t.text   :request_method

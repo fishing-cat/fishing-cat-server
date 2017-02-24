@@ -10,7 +10,6 @@ class Event < ApplicationRecord
     event = {
       cid: params[:cid],
       pid: params[:pid],
-      fingerprint: params[:fingerprint],
       remote_ip: request.remote_ip,
       query_string: request.query_string,
       request_method: request.request_method,

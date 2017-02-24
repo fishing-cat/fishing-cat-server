@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "fingerprintjs2": "^1.5.0",
     "tableexport.jquery.plugin": "^1.6.7"
   },
   "cacheDirectories": [
