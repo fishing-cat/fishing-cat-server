@@ -6,12 +6,6 @@
 #= require extensions/bootstrap-table-mobile
 #= require extensions/bootstrap-table-export
 
-@request_method_formatter = (value, row) ->
-  if value == 'GET'
-    return "<span class=\"label label-primary\">#{value}</span>"
-  if value == 'POST'
-    return "<span class=\"label label-danger\">#{value}</span>"
-  return value
 
 @action_formatter = (value, row) ->
   if value == 'opened_email'
