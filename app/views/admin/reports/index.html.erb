@@ -29,17 +29,3 @@
     <% end %>
   </tbody>
 </table>
-<table class="table table-hover table-condensed">
-  <thead>
-    <tr>
-      <th>Remote IP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% Event.where.not(remote_ip:nil).uniq.pluck(:remote_ip).each do |remote_ip| %>
-    <tr>
-      <td><%= remote_ip %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
