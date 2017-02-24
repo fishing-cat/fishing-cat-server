@@ -3,7 +3,7 @@ en:
     events:
       index:
         title: Events
-        created_at: Time
+        created_at: Timestamp
         id: ID
         cid: Campaign ID
         pid: Person ID
