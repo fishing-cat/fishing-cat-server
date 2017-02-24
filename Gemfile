@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'search_cop', '~> 1.0'
 gem 'font-awesome-rails', '~> 4.7'
+gem 'hashids', '~> 1.0'
 
 group :production do
   gem 'pg'

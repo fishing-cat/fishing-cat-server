@@ -1,0 +1,7 @@
+<ol class="breadcrumb">
+  <li><%= link_to icon_campaigns(text:t('.title')), admin_campaigns_path %></li>
+  <li><%= link_to @campaign.cid, admin_campaign_path(@campaign) %></li>
+  <li class="active"><%= t('.editing') %></li>
+</ol>
+<%= component_notice %>
+<%= render 'form', campaign: @campaign %>

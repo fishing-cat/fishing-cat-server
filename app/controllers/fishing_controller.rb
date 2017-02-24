@@ -10,7 +10,12 @@ class FishingController < ActionController::Base
   end
 
   def clicked_link
-    render template:'fishing/show.html.erb'
+    @campaign = Campaign.find_by(cid:params[:cid])
+    if @campaign
+      render inline:@campaign.form_template
+    else
+      render template:'fishing/show.html.erb'
+    end
   end
 
   def submitted_data
@@ -18,7 +23,12 @@ class FishingController < ActionController::Base
   end
 
   def viewed_result
-    render template:'fishing/result.html.erb'
+    @campaign = Campaign.find_by(cid:params[:cid])
+    if @campaign
+      render inline:@campaign.result_template
+    else
+      render template:'fishing/result.html.erb'
+    end
   end
 
   private

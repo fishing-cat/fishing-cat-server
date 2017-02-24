@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :campaigns
   namespace :admin do
     root to:'root#show', format:false
+    resources :campaigns
     resources :events, only:[:index], format:false
     namespace :events do
       resources :searches, only:[:index], format:'json'

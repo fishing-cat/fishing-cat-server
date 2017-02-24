@@ -1,0 +1,43 @@
+<%= form_for([:admin, campaign]) do |f| %>
+<% if campaign.errors.any? %>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p>
+    <strong><%= icon_error(text:pluralize(campaign.errors.count, 'error')) %></strong>
+    <span>prohibited this campaign from being saved:</span>
+  </p>
+  <ul>
+    <% campaign.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<p>
+  <%= f.submit class:'btn btn-primary' %>
+</p>
+
+<hr>
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><%= f.label :cid %></label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @campaign.cid %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><%= f.label :form_template %></label>
+    <div class="col-sm-10">
+      <%= f.text_area :form_template, class:'form-control', rows:25 %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><%= f.label :result_template %></label>
+    <div class="col-sm-10">
+      <%= f.text_area :result_template, class:'form-control', rows:25 %>
+    </div>
+  </div>
+</div>
+<% end %>

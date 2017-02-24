@@ -1,5 +1,31 @@
 en:
   admin:
+    campaigns:
+      index:
+        title: Campaigns
+        new_campaign: New Campaign
+        id: ID
+        cid: Campaign ID
+        form_template: Form Template
+        result_template: Result Template
+        created_at: Created At
+        updated_at: Updated At
+        events_count: Events
+      show:
+        cid: Campaign ID
+        title: Campaigns
+        edit_campaign: Edit Campaign
+        form_template: Form Template
+        result_template: Result Template
+        updated_at: Updated At
+        created_at: Created At
+        destroy: Destroy
+      new:
+        campaigns: Campaigns
+        action: New Campaign
+      edit:
+        editing: Editing
+        title: Campaigns
     events:
       index:
         title: Events
@@ -15,5 +41,12 @@ en:
     admin:
       application:
         title: Fishing Cat Server
+        campaigns: Campaigns
         events: Events
         reports: Reports
+  activerecord:
+    attributes:
+      campaign:
+        cid: Campaign ID
+        form_template: Form Template
+        result_template: Result Template

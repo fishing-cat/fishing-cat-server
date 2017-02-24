@@ -1,0 +1,44 @@
+<ol class="breadcrumb">
+  <li class="active"><%= icon_campaigns(text:t('.title')) %></li>
+</ol>
+<div class="alt-table-responsive">
+  <div id="toolbar">
+    <div class="form-inline" role="form">
+      <%= link_to icon_action_new(text:t('.new_campaign')), new_admin_campaign_path, class:'btn btn-primary' %>
+    </div>
+  </div>
+  <table
+    data-toggle="table"
+    data-search="true"
+    data-show-columns="true"
+    data-mobile-responsive="true"
+    data-show-export="true"
+    data-export-types="['csv', 'json', 'xml']"
+    data-export-options='{"fileName":"events"}'
+    data-classes="table table-no-bordered table-hover"
+    data-toolbar="#toolbar"
+    data-sort-order="desc"
+    data-page-size="100"
+    data-page-list="[100,1000,10000]">
+    <thead>
+      <tr>
+        <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
+        <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
+        <th data-field="events_count" data-sortable="true"><%= t(".events_count") %></th>
+        <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
+        <th data-field="updated_at" data-sortable="true"><%= t(".updated_at") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaigns.each do |campaign| %>
+      <tr>
+        <td><%= campaign.id %></td>
+        <td><%= link_to campaign.cid, admin_campaign_path(campaign) %></td>
+        <td><%= Event.where(cid:campaign.cid).count %></td>
+        <td><%= campaign.created_at %></td>
+        <td><%= campaign.updated_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
