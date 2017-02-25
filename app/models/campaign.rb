@@ -11,7 +11,11 @@ class Campaign < ApplicationRecord
   private
 
     def set_default
-      self.cid ||= Hashids.new("this is my salt", 0, 'abcdefghijklmnopqrstuvwxyz').encode(Time.now.to_i)
+      self.cid ||= Hashids.new(salt, 0, 'abcdefghijklmnopqrstuvwxyz').encode(Time.now.to_i)
+    end
+
+    def salt
+      FishingCat::Server::Application.secrets.secret_key_base
     end
 
 end
