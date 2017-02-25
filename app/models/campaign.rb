@@ -1,6 +1,6 @@
 class Campaign < ApplicationRecord
 
-  validates :cid, presence:true
+  validates :cid, presence:true, uniqueness:true
 
   after_initialize :set_default, if: :new_record?
 
