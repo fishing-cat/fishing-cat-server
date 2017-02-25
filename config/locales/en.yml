@@ -23,6 +23,7 @@ en:
         created_at: Created At
         destroy: Destroy
         events: Events
+        url_template: URL Template
       new:
         campaigns: Campaigns
         action: New Campaign

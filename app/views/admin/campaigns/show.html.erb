@@ -29,6 +29,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label class="col-sm-2 control-label"><%= t('.url_template') %></label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= request.base_url + '/' + @campaign.cid + '/#{pid}' %></p>
+    </div>
+  </div>
+  <div class="form-group">
     <label class="col-sm-2 control-label"><%= t('.form_template') %></label>
     <div class="col-sm-10">
       <pre class="form-control-static"><code><%= @campaign.form_template %></code></pre>
