@@ -11,6 +11,7 @@ en:
         created_at: Created At
         updated_at: Updated At
         events_count: Events
+        people_count: People
       show:
         cid: Campaign ID
         title: Campaigns
