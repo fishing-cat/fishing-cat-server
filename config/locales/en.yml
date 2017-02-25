@@ -21,6 +21,7 @@ en:
         updated_at: Updated At
         created_at: Created At
         destroy: Destroy
+        events: Events
       new:
         campaigns: Campaigns
         action: New Campaign
