@@ -24,6 +24,7 @@ en:
         destroy: Destroy
         events: Events
         url_template: URL Template
+        people: People
       new:
         campaigns: Campaigns
         action: New Campaign
