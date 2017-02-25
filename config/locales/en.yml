@@ -34,16 +34,12 @@ en:
         cid: Campaign ID
         pid: Person ID
         action: Action
-    reports:
-      index:
-        title: Reports
   layouts:
     admin:
       application:
         title: Fishing Cat Server
         campaigns: Campaigns
         events: Events
-        reports: Reports
   activerecord:
     attributes:
       campaign:
