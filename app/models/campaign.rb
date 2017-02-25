@@ -1,8 +1,6 @@
 class Campaign < ApplicationRecord
 
   validates :cid, presence:true
-  validates :form_template, presence:true
-  validates :result_template, presence:true
 
   after_initialize :set_default, if: :new_record?
 
