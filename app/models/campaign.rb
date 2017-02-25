@@ -6,6 +6,10 @@ class Campaign < ApplicationRecord
 
   after_initialize :set_default, if: :new_record?
 
+  def to_param
+    cid
+  end
+
   private
 
     def set_default
