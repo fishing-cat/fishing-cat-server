@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Result Page</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'fishing', media:'all' %>
-    <%= javascript_include_tag 'fishing' %>
+    <%= stylesheet_link_tag :fishing %>
+    <%= javascript_include_tag :fishing %>
   </head>
   <body>
     <div class="container">
-      <h2>Result</h2>
-      <p>This is an anti-phishing training site.</p>
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6">
+          <h2>Result</h2>
+          <p>This is an anti-phishing training site.</p>
+          <%= image_tag('logo.png', class:'img-responsive center-block') %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
