@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   include SearchCop
 
   search_scope :search do
-    attributes :id, :cid, :action
+    attributes :id, :cid, :pid, :action, :update_at, :created_at
   end
 
   def self.log(params, request)
