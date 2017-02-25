@@ -22,8 +22,8 @@
         </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to icon_campaigns(text:t('.campaigns')), admin_campaigns_path %></li>
-            <li><%= link_to icon_events(text:t('.events')), admin_events_path %></li>
+            <li class="<%= 'active' if params[:controller] == 'admin/campaigns' %>"><%= link_to icon_campaigns(text:t('.campaigns')), admin_campaigns_path %></li>
+            <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to icon_events(text:t('.events')), admin_events_path %></li>
           </ul>
         </div>
       </div>
