@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :campaigns
   namespace :admin do
     root to:'root#show', format:false
     resources :campaigns, param: :cid
