@@ -1,5 +1,8 @@
 module IconHelper
 
+  def icon_save(options = {})
+    font_awesome_icon('save', options)
+  end
   def icon_error(options = {})
     font_awesome_icon('warning', options)
   end
