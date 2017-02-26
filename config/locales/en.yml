@@ -26,11 +26,15 @@ en:
         url_template: URL Template
         people: People
       new:
-        campaigns: Campaigns
         action: New Campaign
+        campaigns: Campaigns
       edit:
-        editing: Editing
-        title: Campaigns
+        action: Editing Campaign
+        campaigns: Campaigns
+      form:
+        url_template: URL Template
+        load_default_form_template: Load Default Form Template
+        load_default_result_template: Load Default Result Template
     events:
       index:
         title: Events
