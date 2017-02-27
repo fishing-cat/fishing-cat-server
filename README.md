@@ -9,15 +9,17 @@
 
 Fishing Cat Serverは以下の特徴があります。
 
-1. [はやい] Heroku Buttonで簡単に組織外のサーバに訓練用サイトを配置できる。
-2. [うまい] 組織外に訓練用サイトを配備することで本物に近い環境で訓練を実施できる。
-3. [やすい] 訓練用サイトにはメールアドレスやパスワードなどの機密性の高い情報を保存しないため、情報の格付け及び取扱制限に関する規程に抵触せず、安全に訓練を実施できる。
+1. Heroku Buttonで簡単に組織外のサーバへ訓練用サイトを配置できます。
+2. 組織外のサーバに訓練用サイトを配置することで本物の攻撃に近い環境で訓練を実施できます。訓練対象者はURLの確認やサーバ証明書の確認を正しく実践することが可能です。
+3. 訓練用サイトのサーバには訓練対象者の氏名やメールアドレスといった識別特定情報を保存しません。代わりに、識別特定情報に依存せず生成された訓練対象者の識別子を仮名化されたデータ（pseudonymised data）として保存します。これにより、訓練用サイトにおける情報漏洩のリスクを低減させながら本格的な訓練の実施が可能です。
 
 ## インストール
 
 ### デプロイ
 
-Herokuのアカウントを作成の上、下記のボタンをクリックします。クリック後はHeroku Buttonのマニュアル通りに手続きを進めてください。
+Fishing Cat ServerはRuby on Railsで作成されていますのでRuby on Railsを利用している方であれば容易にサーバへデプロイすることが可能です。
+
+より簡単に訓練用サイトを配置できるようにHeroku Buttonにも対応しています。Herokuのアカウントを作成の上、下記のボタンをクリックします。クリック後はHeroku Buttonのマニュアル通りに手続きを進めてください。
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/fishing-cat/fishing-cat-server)
 
@@ -45,16 +47,27 @@ $ echo -n 'username:realm:password' | md5
 ## URL
 
 * **GET** `/images/:cid/:pid`: トラッキングピクセルのURLです。PNGファイルを返します。HTMLメールの `img` 要素の `src` 属性に指定することでメールの開封を追跡します。
-* **GET** `/:cid/:pid`: 訓練用サイトのウェブフォームです。このURLにアクセスすることでHTMLメールのリンクのクリックを追跡します。
-* **POST** `/:cid/:pid`: 上記のウェブフォームの送信ボタンを押した際にデータが送信されたことを追跡します。
+* **GET** `/form/:cid/:pid`: 訓練用サイトのウェブフォームです。このURLにアクセスすることでHTMLメールのリンクのクリックを追跡します。
+* **POST** `/form/:cid/:pid`: 上記のウェブフォームの送信ボタンを押した際にデータが送信されたことを追跡します。
 * **GET** `/result/:cid/:pid`: 訓練結果のページです。訓練対象者がウェブフォームの送信ボタンを押した後にリダイレクトされます。最終的にのページへ遷移させて訓練であることを説明する用途を想定しています。
 * `/admin`: 管理者用のページです。
 
-| Param | Name |
-|-----|-----|-----|
-| `:cid` | Campaign ID |
-| `:pid` | Person ID |
+## Database
+
+データベースには下記の情報が保存されます。
+
+* `cid`: Campaign ID: 訓練ID
+* `pid`: Person ID: 訓練対象者ID
+* `action`: 訓練対象者が行った動作
+	* `opened_email`: メールの開封
+	* `clicked_link`: リンクのクリック
+	* `submitted_data`: フォームデータの送信
+	* `viewed_result`: 結果の表示
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Author
+
+Masayuki Higashino
