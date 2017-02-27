@@ -21,7 +21,7 @@
     <div class="col-sm-10">
       <p class="form-control-static">
         <%= link_to admin_events_path(search:"cid:#{@campaign.cid}") do %>
-          <span><%= Event.where(cid:@campaign.cid).count %></span>
+        <span><%= Event.where(cid:@campaign.cid).count %></span>
         <% end %>
       </p>
     </div>
