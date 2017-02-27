@@ -24,6 +24,9 @@ en:
         destroy: Destroy
         events: Events
         url_template: URL Template
+        sample_image_url: Sample Image URL
+        sample_form_url: Sample Form URL
+        sample_resiult_url: Sample Result URL
         people: People
       new:
         action: New Campaign
