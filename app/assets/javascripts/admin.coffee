@@ -16,3 +16,9 @@
   if value == 'viewed_result'
     return "<span class=\"label label-success\">Viewed Result</span>"
   return value
+
+$(document).ready ->
+  $('#show_admin_campaigns_template_form').on 'ajax:success', (event, data) ->
+    $('#campaign_form_template').val(data)
+  $('#show_admin_campaigns_template_result').on 'ajax:success', (event, data) ->
+    $('#campaign_result_template').val(data)

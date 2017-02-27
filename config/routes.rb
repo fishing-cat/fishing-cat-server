@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
     root to:'root#show', format:false
+    namespace :campaigns do
+      resources :templates, only:[:show], param: :name, format:false
+    end
     resources :campaigns, param: :cid
     resources :events, only:[:index], format:false
     namespace :events do
