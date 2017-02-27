@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get  '/images/(:cid/(:pid))',  to:'fishing#opened_email',   format:false
   get  '/forms(/(:cid/(:pid)))', to:'fishing#clicked_link',   format:false
   post '/forms(/(:cid/(:pid)))', to:'fishing#submitted_data', format:false
+  root to:'fishing#clicked_link', format:false
 end
