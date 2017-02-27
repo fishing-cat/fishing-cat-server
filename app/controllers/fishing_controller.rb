@@ -11,10 +11,10 @@ class FishingController < ActionController::Base
 
   def clicked_link
     @campaign = Campaign.find_by(cid:params[:cid])
-    if @campaign
+    if @campaign && !@campaign.form_template.blank?
       render inline:@campaign.form_template
     else
-      render template:'fishing/show.html.erb'
+      render template:'fishing/form.html.erb'
     end
   end
 
@@ -24,7 +24,7 @@ class FishingController < ActionController::Base
 
   def viewed_result
     @campaign = Campaign.find_by(cid:params[:cid])
-    if @campaign
+    if @campaign && !@campaign.result_template.blank?
       render inline:@campaign.result_template
     else
       render template:'fishing/result.html.erb'
