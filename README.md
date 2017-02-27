@@ -13,6 +13,25 @@ Fishing Cat Serverは以下の特徴があります。
 2. 組織外のサーバに訓練用サイトを配置することで本物の攻撃に近い環境で訓練を実施できます。訓練対象者はURLの確認やサーバ証明書の確認を正しく実践することが可能です。
 3. 訓練用サイトのサーバには訓練対象者の氏名やメールアドレスといった識別特定情報を保存しません。代わりに、識別特定情報に依存せず生成された訓練対象者の識別子を仮名化されたデータ（pseudonymised data）として保存します。これにより、訓練用サイトにおける情報漏洩のリスクを低減させながら本格的な訓練の実施が可能です。
 
+## スクリーンショット
+
+![Screenshot01](https://cloud.githubusercontent.com/assets/706275/23370012/9de4ca8a-fd56-11e6-8c37-78813d8abb09.png)
+
+![Screenshot02](https://cloud.githubusercontent.com/assets/706275/23370013/a03b6fbe-fd56-11e6-8c9d-24ca4920bc1c.png)
+
+## デモ
+
+### Admin Page
+
+https://fishing-cat-server.herokuapp.com/admin
+
+* User Name: `admin`
+* Password: `admin`
+
+### Sample Phishing Site
+
+https://fishing-cat-server.herokuapp.com/forms/qbamjkxvd/eapvdrrbd
+
 ## インストール
 
 ### デプロイ
