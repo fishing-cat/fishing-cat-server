@@ -5,10 +5,7 @@ Rails.application.routes.draw do
       resources :templates, only:[:show], param: :name, format:false
     end
     resources :campaigns, param: :cid
-    resources :events, only:[:index], format:false
-    namespace :events do
-      resources :searches, only:[:index], format:'json'
-    end
+    resources :events, only:[:index], format:/html|json/
   end
   get  '/result/(:cid/(:pid))', to:'fishing#viewed_result',  format:false, as:'fishing_result'
   get  '/images/(:cid/(:pid))', to:'fishing#opened_email',   format:false

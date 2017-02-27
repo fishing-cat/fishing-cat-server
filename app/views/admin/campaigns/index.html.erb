@@ -24,8 +24,8 @@
       <tr>
         <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
         <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
-        <th data-field="events_count" data-sortable="true"><%= t(".events_count") %></th>
-        <th data-field="people_count" data-sortable="true"><%= t(".people_count") %></th>
+        <th data-field="events_count" data-sortable="true" data-align="right"><%= t(".events_count") %></th>
+        <th data-field="people_count" data-sortable="true" data-align="right"><%= t(".people_count") %></th>
         <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
         <th data-field="updated_at" data-sortable="true"><%= t(".updated_at") %></th>
       </tr>
@@ -35,8 +35,14 @@
       <tr>
         <td><%= campaign.id %></td>
         <td><%= link_to campaign.cid, admin_campaign_path(campaign) %></td>
-        <td><%= Event.where(cid:campaign.cid).count %></td>
-        <td><%= Event.where(cid:campaign.cid).select(:pid).uniq.count %></td>
+        <td>
+          <%= link_to admin_events_path(search:"cid:#{campaign.cid}") do %>
+            <span><%= Event.where(cid:campaign.cid).count %></span>
+          <% end %>
+        </td>
+        <td>
+          <span><%= Event.where(cid:campaign.cid).select(:pid).uniq.count %></span>
+        </td>
         <td><%= campaign.created_at %></td>
         <td><%= campaign.updated_at %></td>
       </tr>

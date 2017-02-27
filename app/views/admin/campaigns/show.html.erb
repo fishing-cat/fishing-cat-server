@@ -19,7 +19,11 @@
   <div class="form-group">
     <label class="col-sm-2 control-label"><%= t('.events') %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= Event.where(cid:@campaign.cid).count %></p>
+      <p class="form-control-static">
+        <%= link_to admin_events_path(search:"cid:#{@campaign.cid}") do %>
+          <span><%= Event.where(cid:@campaign.cid).count %></span>
+        <% end %>
+      </p>
     </div>
   </div>
   <div class="form-group">

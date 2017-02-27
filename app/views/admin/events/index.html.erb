@@ -11,7 +11,8 @@
     data-export-types="['csv', 'json', 'xml']"
     data-export-options='{"fileName":"events"}'
     data-classes="table table-no-bordered table-hover"
-    data-url="<%= url_for(admin_events_searches_path(format:'json')) %>"
+    data-url="<%= url_for(admin_events_path(format:'json')) %>"
+    data-search-text="<%= params[:search] %>"
     data-side-pagination="server"
     data-pagination="true"
     data-show-refresh="true"
