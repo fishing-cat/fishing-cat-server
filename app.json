@@ -15,7 +15,7 @@
     "postdeploy": "bundle exec rails db:migrate"
   },
   "addons": ["heroku-postgresql"],
-  "success_url": "/",
+  "success_url": "/admin",
   "env": {
     "RAILS_FORCE_SSL": {
       "value": "enabled"
