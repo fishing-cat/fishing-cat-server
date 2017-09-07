@@ -46,6 +46,19 @@ en:
         cid: Campaign ID
         pid: Person ID
         action: Action
+        fingerprint: Fingerprint
+        remote_ip: Remote IP
+        query_string: Query String
+        request_method: Request Method
+        request_path: Request Path
+        request_uri: Request URI
+        http_user_agent: HTTP UserAgent
+        http_dnt: HTTP DNT
+        http_referer: HTTP Referer
+        http_accept: HTTP Accept
+        http_accept_encoding: HTTP Accept Encoding
+        http_accept_language: HTTP Accept Language
+        params: Params
   layouts:
     admin:
       application:
