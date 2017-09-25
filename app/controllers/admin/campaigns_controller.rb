@@ -3,7 +3,7 @@ class Admin::CampaignsController < Admin::ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.order(updated_at: :desc)
   end
 
   def show
