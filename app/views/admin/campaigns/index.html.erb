@@ -41,7 +41,7 @@
           <% end %>
         </td>
         <td>
-          <span><%= Event.where(cid:campaign.cid).select(:pid).uniq.count %></span>
+          <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
         </td>
         <td><%= campaign.created_at %></td>
         <td><%= campaign.updated_at %></td>
