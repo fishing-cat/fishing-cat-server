@@ -7,8 +7,6 @@
   <%= link_to icon_action_edit(text:t('.edit_campaign')), edit_admin_campaign_path(@campaign), class:'btn btn-primary' %>
   <%= link_to icon_action_destroy(text:t('.destroy')), admin_campaign_path(@campaign),  class:'btn btn-danger pull-right', method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
-
-<hr>
 <div class="form-horizontal">
   <div class="form-group">
     <label class="col-sm-2 control-label"><%= t('.cid') %></label>
