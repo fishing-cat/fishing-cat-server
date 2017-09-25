@@ -16,6 +16,7 @@ en:
       show:
         cid: Campaign ID
         title: Campaigns
+        note: Note
         edit_campaign: Edit Campaign
         form_template: Form Template
         result_template: Result Template

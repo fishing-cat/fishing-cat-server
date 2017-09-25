@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907091911) do
+ActiveRecord::Schema.define(version: 20170925183102) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "cid"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170907091911) do
     t.text "result_template"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "note"
     t.index ["cid"], name: "index_campaigns_on_cid", unique: true
   end
 

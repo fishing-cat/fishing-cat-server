@@ -45,7 +45,7 @@ class Admin::CampaignsController < Admin::ApplicationController
     end
 
     def campaign_params
-      params.require(:campaign).permit(:cid, :form_template, :result_template)
+      params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
     end
 
 end

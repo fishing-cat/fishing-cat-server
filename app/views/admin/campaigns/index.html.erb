@@ -28,6 +28,7 @@
         <th data-field="people_count" data-sortable="true" data-align="right"><%= t(".people_count") %></th>
         <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
         <th data-field="updated_at" data-sortable="true"><%= t(".updated_at") %></th>
+        <th data-field="note" data-sortable="true"><%= t(".note") %></th>
       </tr>
     </thead>
     <tbody>
@@ -45,6 +46,7 @@
         </td>
         <td><%= campaign.created_at %></td>
         <td><%= campaign.updated_at %></td>
+        <td><%= campaign.note %></td>
       </tr>
       <% end %>
     </tbody>
