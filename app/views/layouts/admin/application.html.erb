@@ -24,6 +24,7 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'admin/campaigns' %>"><%= link_to icon_campaigns(text:t('.campaigns'), fw:true), admin_campaigns_path %></li>
             <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to icon_events(text:t('.events'), fw:true), admin_events_path %></li>
+            <li class="<%= 'active' if params[:controller] == 'admin/people' %>"><%= link_to icon_people(text:t('.people'), fw:true), admin_people_path %></li>
           </ul>
         </div>
       </div>

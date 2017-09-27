@@ -32,6 +32,10 @@ module IconHelper
     font_awesome_icon('calendar', options)
   end
 
+  def icon_people(options = {})
+    font_awesome_icon('user-o', options)
+  end
+
   private
 
     def font_awesome_icon(names, options)

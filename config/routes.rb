@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
     resources :campaigns, param: :cid
     resources :events, only:[:index], format:/html|json/
+    resources :people, only:[:index], format:/html|json/
   end
   get '/results/(:cid/(:pid))', to:'fishing#viewed_result', format:false, as:'fishing_result'
   get '/images/(:cid/(:pid))', to:'fishing#opened_email', format:false

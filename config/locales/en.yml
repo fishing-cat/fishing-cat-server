@@ -60,6 +60,15 @@ en:
         http_accept_encoding: HTTP Accept Encoding
         http_accept_language: HTTP Accept Language
         params: Params
+    people:
+      index:
+        title: People
+        cid: Campaign ID
+        pid: Person ID
+        opened_email: Opened Email
+        clicked_link: Clicked Link
+        submitted_data: Submitted Data
+        viewed_result: Viewed Result
   layouts:
     admin:
       application:

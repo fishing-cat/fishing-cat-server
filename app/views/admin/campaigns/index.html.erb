@@ -42,7 +42,9 @@
           <% end %>
         </td>
         <td>
-          <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
+          <%= link_to admin_people_path(search:"cid:#{campaign.cid}") do %>
+            <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
+          <% end %>
         </td>
         <td><%= campaign.created_at %></td>
         <td><%= campaign.updated_at %></td>
