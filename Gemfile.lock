@@ -124,7 +124,8 @@ GEM
       coolline (~> 0.5)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
-    puma (3.10.0)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -223,7 +224,7 @@ DEPENDENCIES
   pry-byebug
   pry-coolline
   pry-rails
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
   search_cop (~> 1.0)
