@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bootstrap-table": "^1.11.2",
-    "tableexport.jquery.plugin": "^1.6.7"
+    "tableexport.jquery.plugin": "^1.25.0"
   },
   "cacheDirectories": [
     "node_modules"
