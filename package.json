@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bootstrap-table": "^1.11.2",
+    "bootstrap-table": "^1.20.2",
     "tableexport.jquery.plugin": "^1.6.7"
   },
   "cacheDirectories": [
