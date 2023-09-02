@@ -1,5 +1,5 @@
 class Campaign < ApplicationRecord
-  validates :cid, presence:true, uniqueness:true
+  validates :cid, presence: true, uniqueness: true
 
   def self.default_template(name)
     return nil if name !~ /^[a-z]+$/

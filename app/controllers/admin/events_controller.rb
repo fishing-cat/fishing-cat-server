@@ -10,9 +10,9 @@ class Admin::EventsController < Admin::ApplicationController
       format.html { render }
       format.csv { send_events_csv(@events) }
       format.json {
-        render json:{
-          total:@events_count,
-          rows:@events,
+        render json: {
+          total: @events_count,
+          rows: @events,
         }
       }
     end

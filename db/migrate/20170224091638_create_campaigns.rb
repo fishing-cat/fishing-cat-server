@@ -6,6 +6,6 @@ class CreateCampaigns < ActiveRecord::Migration[5.0]
       t.text :result_template
       t.timestamps
     end
-    add_index :campaigns, :cid, unique:true
+    add_index :campaigns, :cid, unique: true
   end
 end

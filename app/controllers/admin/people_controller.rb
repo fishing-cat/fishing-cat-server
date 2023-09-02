@@ -1,7 +1,7 @@
 class Admin::PeopleController < Admin::ApplicationController
   def index
     relation = Event.search(search)
-    @entries = relation.where.not(cid:[nil, ""], pid:[nil, ""]).distinct.pluck(:cid, :pid).compact
+    @entries = relation.where.not(cid: [nil, ""], pid: [nil, ""]).distinct.pluck(:cid, :pid).compact
     @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
     @records = []
     @entries.each do |cid, pid|
@@ -21,9 +21,9 @@ class Admin::PeopleController < Admin::ApplicationController
     respond_to do |format|
       format.html { render }
       format.json {
-        render json:{
-          total:@records.size,
-          rows:@records,
+        render json: {
+          total: @records.size,
+          rows: @records,
         }
       }
     end

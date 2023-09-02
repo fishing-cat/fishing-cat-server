@@ -41,7 +41,7 @@ module IconHelper
       names = [names]
       names << "fw" if options[:fw]
       if options[:text]
-        fa_icon(names, text:options[:text])
+        fa_icon(names, text: options[:text])
       else
         fa_icon(names)
       end

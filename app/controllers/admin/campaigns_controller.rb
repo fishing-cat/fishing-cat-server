@@ -65,7 +65,7 @@ class Admin::CampaignsController < Admin::ApplicationController
   private
 
     def set_campaign
-      @campaign = Campaign.find_by(cid:params[:cid])
+      @campaign = Campaign.find_by(cid: params[:cid])
     end
 
     def campaign_params

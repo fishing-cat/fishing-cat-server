@@ -50,3 +50,8 @@ Layout/EmptyLinesAroundModuleBody:
 # SupportedStylesAlignWith: keyword, variable, start_of_line
 Layout/EndAlignment:
   Enabled: true
+
+# Offense count: 53
+# This cop supports safe autocorrection (--autocorrect).
+Layout/SpaceAfterColon:
+  Enabled: true
