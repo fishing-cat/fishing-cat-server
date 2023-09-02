@@ -3,14 +3,7 @@
   "description": "Fishing Cat Server",
   "repository": "https://github.com/fishing-cat/fishing-cat-server",
   "website": "https://github.com/fishing-cat/fishing-cat-server",
-  "keywords": [
-    "phishing",
-    "security",
-    "ruby",
-    "rails",
-    "cat",
-    "Rails 5"
-  ],
+  "keywords": ["phishing", "security", "ruby", "rails", "cat", "Rails 7"],
   "scripts": {
     "postdeploy": "bundle exec rails db:migrate"
   },
@@ -30,9 +23,9 @@
       "value": "admin"
     }
   },
-  "buildpacks": [{
-    "url": "heroku/nodejs"
-  }, {
-    "url": "heroku/ruby"
-  }]
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
 }
