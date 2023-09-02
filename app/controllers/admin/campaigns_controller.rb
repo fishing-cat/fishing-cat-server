@@ -1,5 +1,4 @@
 class Admin::CampaignsController < Admin::ApplicationController
-
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -72,5 +71,4 @@ class Admin::CampaignsController < Admin::ApplicationController
     def campaign_params
       params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
     end
-
 end

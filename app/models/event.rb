@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
   include SearchCop
 
   search_scope :search do
@@ -27,5 +26,4 @@ class Event < ApplicationRecord
     }
     Event.create(event)
   end
-
 end

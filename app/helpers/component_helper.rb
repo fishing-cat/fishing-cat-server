@@ -1,5 +1,4 @@
 module ComponentHelper
-
   def component_notice
     if notice
       content_tag(:div, class:"alert alert-success alert-dismissible", role:"alert") do
@@ -9,5 +8,4 @@ module ComponentHelper
       end
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require "csv"
 
 class Admin::EventsController < Admin::ApplicationController
-
   def index
     relation = Event.search(search)
     @events_count = relation.count
@@ -71,5 +70,4 @@ class Admin::EventsController < Admin::ApplicationController
   def offset
     params[:offset]
   end
-
 end

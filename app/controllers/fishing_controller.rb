@@ -1,5 +1,4 @@
 class FishingController < ActionController::Base
-
   protect_from_forgery with: :exception
   layout false
   before_action :event_log
@@ -36,5 +35,4 @@ class FishingController < ActionController::Base
     def event_log
       Event.log(params, request)
     end
-
 end

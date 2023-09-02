@@ -5,9 +5,9 @@ module I18nHelper
     key = object ? (object.persisted? ? :update : :create) : :submit
     model = if object.respond_to?(:model_name)
       object.model_name.human
-    else
+            else
       form.object_name.to_s.humanize
-    end
+            end
     defaults = []
     defaults << :"helpers.submit.#{form.object_name}.#{key}"
     defaults << :"helpers.submit.#{key}"

@@ -1,5 +1,4 @@
 class Admin::ApplicationController < ActionController::Base
-
   protect_from_forgery with: :exception
   before_action :authenticate
 
@@ -8,5 +7,4 @@ class Admin::ApplicationController < ActionController::Base
       Settings.admin_username == username ? Settings.admin_password : nil
     end
   end
-
 end

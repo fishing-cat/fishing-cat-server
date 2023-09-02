@@ -1,5 +1,4 @@
 class Settings
-
   def self.admin_realm
     ENV.fetch("FISHING_CAT_ADMIN_REALM", nil)
   end
@@ -11,5 +10,4 @@ class Settings
   def self.admin_password
     ENV.fetch("FISHING_CAT_ADMIN_PASSWORD", nil)
   end
-
 end

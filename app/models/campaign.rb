@@ -1,5 +1,4 @@
 class Campaign < ApplicationRecord
-
   validates :cid, presence:true, uniqueness:true
 
   def self.default_template(name)
@@ -24,5 +23,4 @@ class Campaign < ApplicationRecord
     def salt
       FishingCat::Server::Application.secrets.secret_key_base
     end
-
 end

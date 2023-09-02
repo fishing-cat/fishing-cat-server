@@ -10,3 +10,43 @@ AllCops:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+# Offense count: 4
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: leading, trailing
+Layout/DotPosition:
+  Enabled: true
+  # Exclude:
+  #   - 'bin/yarn'
+
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+Layout/ElseAlignment:
+  Enabled: true
+
+# Offense count: 2
+# This cop supports safe autocorrection (--autocorrect).
+Layout/EmptyLines:
+  Enabled: true
+
+# Offense count: 20
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# Offense count: 6
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyleAlignWith, Severity.
+# SupportedStylesAlignWith: keyword, variable, start_of_line
+Layout/EndAlignment:
+  Enabled: true

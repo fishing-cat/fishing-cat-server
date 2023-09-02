@@ -1,5 +1,4 @@
 class Admin::PeopleController < Admin::ApplicationController
-
   def index
     relation = Event.search(search)
     @entries = relation.where.not(cid:[nil, ""], pid:[nil, ""]).distinct.pluck(:cid, :pid).compact
@@ -51,5 +50,4 @@ class Admin::PeopleController < Admin::ApplicationController
     def offset
       params[:offset]
     end
-
 end

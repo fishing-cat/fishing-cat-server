@@ -1,5 +1,4 @@
 module IconHelper
-
   def icon_save(options = {})
     font_awesome_icon("save", options)
   end
@@ -47,5 +46,4 @@ module IconHelper
         fa_icon(names)
       end
     end
-
 end
