@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
   include SearchCop
 
   search_scope :search do
@@ -15,11 +14,11 @@ class Event < ApplicationRecord
       remote_ip: request.remote_ip,
       query_string: request.query_string,
       request_method: request.request_method,
-      request_path: request.env['REQUEST_PATH'],
-      request_uri: request.env['REQUEST_URI'],
+      request_path: request.env["REQUEST_PATH"],
+      request_uri: request.env["REQUEST_URI"],
       http_user_agent: request.user_agent,
-      http_dnt: request.env['HTTP_DNT'],
-      http_referer: request.env['HTTP_REFERER'],
+      http_dnt: request.env["HTTP_DNT"],
+      http_referer: request.env["HTTP_REFERER"],
       http_accept: request.accept,
       http_accept_encoding: request.accept_encoding,
       http_accept_language: request.accept_language,
@@ -27,5 +26,4 @@ class Event < ApplicationRecord
     }
     Event.create(event)
   end
-
 end

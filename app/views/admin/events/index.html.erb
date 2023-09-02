@@ -1,45 +1,37 @@
-<ol class="breadcrumb">
-  <li class="active"><%= t('.title') %></li>
-</ol>
-<div class="alt-table-responsive">
-  <table
-    data-toggle="table"
-    data-search="true"
-    data-show-columns="true"
-    data-mobile-responsive="true"
-    data-show-export="true"
-    data-export-types="['csv', 'json', 'xml']"
-    data-export-options='{"fileName":"events"}'
-    data-classes="table table-no-bordered table-hover"
-    data-url="<%= url_for(admin_events_path(format:'json')) %>"
-    data-search-text="<%= params[:search] %>"
-    data-side-pagination="server"
-    data-pagination="true"
-    data-show-refresh="true"
-    data-sort-order="desc"
-    data-page-size="100"
-    data-page-list="[100,1000,10000]">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><%= t(".title") %></li>
+  </ol>
+</nav>
+<p>
+  <%= link_to("Download CSV", admin_events_path(search: params[:search], format: :csv), class: "btn btn-info") %>
+</p>
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-sm table-bordered">
     <thead>
-      <tr>
-        <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
-        <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
-        <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
-        <th data-field="pid" data-sortable="true"><%= t(".pid") %></th>
-        <th data-field="action" data-sortable="true" data-formatter="action_formatter"><%= t(".action") %></th>
-        <th data-field="fingerprint" data-sortable="true" data-visible="false"><%= t(".fingerprint") %></th>
-        <th data-field="remote_ip" data-sortable="true" data-visible="false"><%= t(".remote_ip") %></th>
-        <th data-field="query_string" data-sortable="true" data-visible="false"><%= t(".query_string") %></th>
-        <th data-field="request_method" data-sortable="true" data-visible="false"><%= t(".request_method") %></th>
-        <th data-field="request_path" data-sortable="true" data-visible="false"><%= t(".request_path") %></th>
-        <th data-field="request_uri" data-sortable="true" data-visible="false"><%= t(".request_uri") %></th>
-        <th data-field="http_user_agent" data-sortable="true" data-visible="false"><%= t(".http_user_agent") %></th>
-        <th data-field="http_dnt" data-sortable="true" data-visible="false"><%= t(".http_dnt") %></th>
-        <th data-field="http_referer" data-sortable="true" data-visible="false"><%= t(".http_referer") %></th>
-        <th data-field="http_accept" data-sortable="true" data-visible="false"><%= t(".http_accept") %></th>
-        <th data-field="http_accept_encoding" data-sortable="true" data-visible="false"><%= t(".http_accept_encoding") %></th>
-        <th data-field="http_accept_language" data-sortable="true" data-visible="false"><%= t(".http_accept_language") %></th>
-        <th data-field="params" data-sortable="true" data-visible="false"><%= t(".params") %></th>
+      <tr class="align-top">
+        <th class="text-nowrap"><%= t(".id") %></th>
+        <th class="text-nowrap"><%= t(".created_at") %></th>
+        <th class="text-nowrap"><%= t(".cid") %></th>
+        <th class="text-nowrap"><%= t(".pid") %></th>
+        <th class="text-nowrap"><%= t(".action") %></th>
+        <th class="text-nowrap"><%= t(".fingerprint") %></th>
+        <th class="text-nowrap"><%= t(".remote_ip") %></th>
+        <th class="text-nowrap"><%= t(".query_string") %></th>
+        <th class="text-nowrap"><%= t(".request_method") %></th>
+        <th class="text-nowrap"><%= t(".request_path") %></th>
+        <th class="text-nowrap"><%= t(".request_uri") %></th>
+        <th class="text-nowrap"><%= t(".http_user_agent") %></th>
+        <th class="text-nowrap"><%= t(".http_dnt") %></th>
+        <th class="text-nowrap"><%= t(".http_referer") %></th>
+        <th class="text-nowrap"><%= t(".http_accept") %></th>
+        <th class="text-nowrap"><%= t(".http_accept_encoding") %></th>
+        <th class="text-nowrap"><%= t(".http_accept_language") %></th>
+        <th class="text-nowrap"><%= t(".params") %></th>
       </tr>
     </thead>
+    <tbody>
+      <%= render @events %>
+    </tbody>
   </table>
 </div>

@@ -1,35 +1,6 @@
-<ol class="breadcrumb">
-  <li class="active"><%= t('.title') %></li>
-</ol>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><%= t(".title") %></li>
+  </ol>
+</nav>
 <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> This feature is currently under development.</p>
-<div class="alt-table-responsive">
-  <table
-    data-toggle="table"
-    data-search="true"
-    data-show-columns="true"
-    data-mobile-responsive="true"
-    data-show-export="true"
-    data-export-types="['csv', 'json', 'xml']"
-    data-export-options='{"fileName":"people"}'
-    data-classes="table table-no-bordered table-hover"
-    data-url="<%= url_for(admin_people_path(format:'json')) %>"
-    data-search-text="<%= params[:search] %>"
-    data-side-pagination="server"
-    data-pagination="true"
-    data-show-refresh="true"
-    data-sort-order="desc"
-    data-page-size="100"
-    data-page-list="[100,1000,10000]">
-    <thead>
-      <tr>
-        <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
-        <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
-        <th data-field="pid" data-sortable="true"><%= t(".pid") %></th>
-        <th data-field="opened_email" data-sortable="true" data-align="right" data-cell-style="action_cell_style" data-formatter="action_count_formatter"><%= t(".opened_email") %></th>
-        <th data-field="clicked_link" data-sortable="true" data-align="right" data-cell-style="action_cell_style" data-formatter="action_count_formatter"><%= t(".clicked_link") %></th>
-        <th data-field="submitted_data" data-sortable="true" data-align="right" data-cell-style="action_cell_style" data-formatter="action_count_formatter"><%= t(".submitted_data") %></th>
-        <th data-field="viewed_result" data-sortable="true" data-align="right" data-cell-style="action_cell_style" data-formatter="action_count_formatter"><%= t(".viewed_result") %></th>
-      </tr>
-    </thead>
-  </table>
-</div>

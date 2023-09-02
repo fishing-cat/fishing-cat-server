@@ -1,7 +1,15 @@
-<ol class="breadcrumb">
-  <li><%= link_to icon_campaigns(text:t('.campaigns')), admin_campaigns_path %></li>
-  <li><%= link_to @campaign.cid, admin_campaign_path(@campaign) %></li>
-  <li class="active"><%= t('.action') %></li>
-</ol>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to(icon_campaigns(text: t(".campaigns")), admin_campaigns_path) %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to(@campaign.cid, admin_campaign_path(@campaign)) %>
+    </li>
+    <li class="breadcrumb-item active">
+      <span><%= t(".action") %></span>
+    </li>
+  </ol>
+</nav>
 <%= component_notice %>
-<%= render 'form', campaign: @campaign %>
+<%= render("form", campaign: @campaign) %>

@@ -1,5 +1,4 @@
 module LinkHelper
-
   def link_to_image(cid:, pid:)
     link = "#{request.base_url}/images/#{cid}/#{pid}"
     link_to(link, link)
@@ -14,5 +13,4 @@ module LinkHelper
     link = "#{request.base_url}/results/#{cid}/#{pid}"
     link_to(link, link)
   end
-
 end
