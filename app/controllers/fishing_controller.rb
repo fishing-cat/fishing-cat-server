@@ -14,7 +14,7 @@ class FishingController < ActionController::Base
     if @campaign && !@campaign.form_template.blank?
       render inline:@campaign.form_template
     else
-      render template:'fishing/form.html.erb'
+      render template:'fishing/form'
     end
   end
 
@@ -27,7 +27,7 @@ class FishingController < ActionController::Base
     if @campaign && !@campaign.result_template.blank?
       render inline:@campaign.result_template
     else
-      render template:'fishing/result.html.erb'
+      render template:'fishing/result'
     end
   end
 

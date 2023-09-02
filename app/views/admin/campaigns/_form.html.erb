@@ -37,14 +37,22 @@
   <div class="form-group">
     <label class="col-sm-2 control-label"><%= f.label :form_template %></label>
     <div class="col-sm-10">
-      <p><%= link_to icon_download(text:t('.load_default_form_template')), admin_campaigns_template_path(:form), remote:true, class:'btn btn-sm btn-info', id:'show_admin_campaigns_template_form' %></p>
+      <p>
+        <%= f.button type:'submit', value:"load_default_form_template", class:'btn btn-sm btn-info' do %>
+        <%= icon_download(text:t('.load_default_form_template')) %>
+        <% end %>
+      </p>
       <%= f.text_area :form_template, class:'form-control', rows:25 %>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label"><%= f.label :result_template %></label>
     <div class="col-sm-10">
-      <p><%= link_to icon_download(text:t('.load_default_result_template')), admin_campaigns_template_path(:result), remote:true, class:'btn btn-sm btn-info', id:'show_admin_campaigns_template_result' %></p>
+      <p>
+        <%= f.button type:'submit', value:"load_default_result_template", class:'btn btn-sm btn-info' do %>
+        <%= icon_download(text:t('.load_default_result_template')) %>
+        <% end %>
+      </p>
       <%= f.text_area :result_template, class:'form-control', rows:25 %>
     </div>
   </div>
