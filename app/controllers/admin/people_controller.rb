@@ -31,23 +31,23 @@ class Admin::PeopleController < Admin::ApplicationController
 
   private
 
-    def search
-      params[:search]
-    end
+  def search
+    params[:search]
+  end
 
-    def sort
-      Event.attribute_names.include?(params[:sort]) ? params[:sort] : "id"
-    end
+  def sort
+    Event.attribute_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
 
-    def order
-      %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
-    end
+  def order
+    %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
+  end
 
-    def limit
-      params[:limit]
-    end
+  def limit
+    params[:limit]
+  end
 
-    def offset
-      params[:offset]
-    end
+  def offset
+    params[:offset]
+  end
 end

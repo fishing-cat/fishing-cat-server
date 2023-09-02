@@ -64,11 +64,11 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   private
 
-    def set_campaign
-      @campaign = Campaign.find_by(cid: params[:cid])
-    end
+  def set_campaign
+    @campaign = Campaign.find_by(cid: params[:cid])
+  end
 
-    def campaign_params
-      params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
-    end
+  def campaign_params
+    params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
+  end
 end

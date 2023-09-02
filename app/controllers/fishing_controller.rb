@@ -32,7 +32,7 @@ class FishingController < ActionController::Base
 
   private
 
-    def event_log
-      Event.log(params, request)
-    end
+  def event_log
+    Event.log(params, request)
+  end
 end

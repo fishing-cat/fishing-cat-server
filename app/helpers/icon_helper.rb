@@ -37,13 +37,13 @@ module IconHelper
 
   private
 
-    def font_awesome_icon(names, options)
-      names = [names]
-      names << "fw" if options[:fw]
-      if options[:text]
-        fa_icon(names, text: options[:text])
-      else
-        fa_icon(names)
-      end
+  def font_awesome_icon(names, options)
+    names = [names]
+    names << "fw" if options[:fw]
+    if options[:text]
+      fa_icon(names, text: options[:text])
+    else
+      fa_icon(names)
     end
+  end
 end

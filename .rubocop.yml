@@ -55,3 +55,53 @@ Layout/EndAlignment:
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceAfterColon:
   Enabled: true
+
+# Offense count: 2
+# This cop supports safe autocorrection (--autocorrect).
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: around, only_before
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: empty_lines, no_empty_lines
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - "db/schema.rb"
+
+# Offense count: 6
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
+# SupportedHashRocketStyles: key, separator, table
+# SupportedColonStyles: key, separator, table
+# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
+Layout/HashAlignment:
+  Enabled: true
+
+# Offense count: 13
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: normal, indented_internal_methods
+Layout/IndentationConsistency:
+  Enabled: true
+
+# Offense count: 15
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: Width, AllowedPatterns.
+Layout/IndentationWidth:
+  Enabled: true
+
+# Offense count: 2
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
+# SupportedStyles: space, no_space, compact
+# SupportedStylesForEmptyBrackets: space, no_space
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
