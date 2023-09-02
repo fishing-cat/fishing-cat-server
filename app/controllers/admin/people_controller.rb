@@ -1,9 +1,8 @@
 class Admin::PeopleController < Admin::ApplicationController
-
   def index
     relation = Event.search(search)
-    @entries = relation.where.not(cid:[nil, ''], pid:[nil, '']).distinct.pluck(:cid, :pid).compact
-    @events = relation.order([sort, order].join(' ')).limit(limit).offset(offset)
+    @entries = relation.where.not(cid: [nil, ""], pid: [nil, ""]).distinct.pluck(:cid, :pid).compact
+    @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
     @records = []
     @entries.each do |cid, pid|
       record = {}
@@ -22,9 +21,9 @@ class Admin::PeopleController < Admin::ApplicationController
     respond_to do |format|
       format.html { render }
       format.json {
-        render json:{
-          total:@records.size,
-          rows:@records,
+        render json: {
+          total: @records.size,
+          rows: @records,
         }
       }
     end
@@ -32,24 +31,23 @@ class Admin::PeopleController < Admin::ApplicationController
 
   private
 
-    def search
-      params[:search]
-    end
+  def search
+    params[:search]
+  end
 
-    def sort
-      Event.attribute_names.include?(params[:sort]) ? params[:sort] : 'id'
-    end
+  def sort
+    Event.attribute_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
 
-    def order
-      %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : 'asc'
-    end
+  def order
+    %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
+  end
 
-    def limit
-      params[:limit]
-    end
+  def limit
+    params[:limit]
+  end
 
-    def offset
-      params[:offset]
-    end
-
+  def offset
+    params[:offset]
+  end
 end

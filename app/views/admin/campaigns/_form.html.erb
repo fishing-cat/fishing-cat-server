@@ -1,69 +1,69 @@
 <%= form_for([:admin, campaign]) do |f| %>
-<% if campaign.errors.any? %>
-<div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <p>
-    <strong><%= icon_error(text:pluralize(campaign.errors.count, 'error')) %></strong>
-    <span>prohibited this campaign from being saved:</span>
-  </p>
-  <ul>
-    <% campaign.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-<div class="form-horizontal">
-  <div class="form-group">
-    <label class="col-sm-2 control-label"><%= f.label :cid %></label>
-    <div class="col-sm-10">
-      <%= f.text_field :cid, class:'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.url_template') %></label>
-    <div class="col-sm-10">
-      <p class="form-control-static"><%= request.base_url + '/' + @campaign.cid + '/#{pid}' %></p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label"><%= f.label :note %></label>
-    <div class="col-sm-10">
-      <%= f.text_area :note, class:'form-control', rows:3 %>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label"><%= f.label :form_template %></label>
-    <div class="col-sm-10">
+  <% if campaign.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <p>
-        <%= f.button type:'submit', value:"load_default_form_template", class:'btn btn-sm btn-info' do %>
-        <%= icon_download(text:t('.load_default_form_template')) %>
-        <% end %>
+        <strong><%= icon_error(text:pluralize(campaign.errors.count, "error")) %></strong>
+        <span>prohibited this campaign from being saved:</span>
       </p>
-      <%= f.text_area :form_template, class:'form-control', rows:25 %>
+      <ul>
+        <% campaign.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label(:cid) %></label>
+      <div class="col-sm-10">
+        <%= f.text_field(:cid, class:"form-control") %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= t(".url_template") %></label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= request.base_url + "/" + @campaign.cid + '/#{pid}' %></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label(:note) %></label>
+      <div class="col-sm-10">
+        <%= f.text_area(:note, class: "form-control", rows: 3) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label(:form_template) %></label>
+      <div class="col-sm-10">
+        <p>
+          <%= f.button(type: "submit", value: "load_default_form_template", class: "btn btn-sm btn-info") do %>
+            <%= icon_download(text: t(".load_default_form_template")) %>
+          <% end %>
+        </p>
+        <%= f.text_area(:form_template, class: "form-control", rows: 25) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label"><%= f.label(:result_template) %></label>
+      <div class="col-sm-10">
+        <p>
+          <%= f.button(type: "submit", value: "load_default_result_template", class: "btn btn-sm btn-info") do %>
+            <%= icon_download(text: t(".load_default_result_template")) %>
+          <% end %>
+        </p>
+        <%= f.text_area(:result_template, class: "form-control", rows: 25) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <p>
+          <%= f.button(type: "submit", class: "btn btn-primary") do %>
+            <%= icon_save(text: i18n_submit_default_value(f)) %>
+          <% end %>
+        </p>
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label"><%= f.label :result_template %></label>
-    <div class="col-sm-10">
-      <p>
-        <%= f.button type:'submit', value:"load_default_result_template", class:'btn btn-sm btn-info' do %>
-        <%= icon_download(text:t('.load_default_result_template')) %>
-        <% end %>
-      </p>
-      <%= f.text_area :result_template, class:'form-control', rows:25 %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <p>
-        <%= f.button type:'submit', class:'btn btn-primary' do %>
-        <%= icon_save(text:i18n_submit_default_value(f)) %>
-        <% end %>
-      </p>
-    </div>
-  </div>
-</div>
 <% end %>
