@@ -4,7 +4,7 @@ class Campaign < ApplicationRecord
 
   def self.default_template(name)
     return nil if name !~ /^[a-z]+$/
-    return Rails.root.join('app', 'views', 'fishing').children.select{ |path|
+    return Rails.root.join("app", "views", "fishing").children.select{ |path|
       path.basename == Pathname("#{name}.html.erb")
     }.first&.read&.html_safe
   end
@@ -18,7 +18,7 @@ class Campaign < ApplicationRecord
   private
 
     def set_default
-      self.cid ||= Hashids.new(salt, 0, 'abcdefghijklmnopqrstuvwxyz').encode(Time.now.to_i)
+      self.cid ||= Hashids.new(salt, 0, "abcdefghijklmnopqrstuvwxyz").encode(Time.now.to_i)
     end
 
     def salt

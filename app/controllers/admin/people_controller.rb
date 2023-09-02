@@ -2,8 +2,8 @@ class Admin::PeopleController < Admin::ApplicationController
 
   def index
     relation = Event.search(search)
-    @entries = relation.where.not(cid:[nil, ''], pid:[nil, '']).distinct.pluck(:cid, :pid).compact
-    @events = relation.order([sort, order].join(' ')).limit(limit).offset(offset)
+    @entries = relation.where.not(cid:[nil, ""], pid:[nil, ""]).distinct.pluck(:cid, :pid).compact
+    @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
     @records = []
     @entries.each do |cid, pid|
       record = {}
@@ -37,11 +37,11 @@ class Admin::PeopleController < Admin::ApplicationController
     end
 
     def sort
-      Event.attribute_names.include?(params[:sort]) ? params[:sort] : 'id'
+      Event.attribute_names.include?(params[:sort]) ? params[:sort] : "id"
     end
 
     def order
-      %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : 'asc'
+      %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
     end
 
     def limit

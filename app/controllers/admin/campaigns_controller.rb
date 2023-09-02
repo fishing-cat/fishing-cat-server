@@ -29,7 +29,7 @@ class Admin::CampaignsController < Admin::ApplicationController
       return
     else
       if @campaign.save
-        redirect_to [:admin, @campaign], notice: 'Campaign was successfully created.'
+        redirect_to [:admin, @campaign], notice: "Campaign was successfully created."
       else
         render :new
       end
@@ -50,7 +50,7 @@ class Admin::CampaignsController < Admin::ApplicationController
       return
     else
       if @campaign.save
-        redirect_to [:admin, @campaign], notice: 'Campaign was successfully updated.'
+        redirect_to [:admin, @campaign], notice: "Campaign was successfully updated."
       else
         render :edit
       end
@@ -60,7 +60,7 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   def destroy
     @campaign.destroy
-    redirect_to admin_campaigns_url, notice: 'Campaign was successfully destroyed.'
+    redirect_to admin_campaigns_url, notice: "Campaign was successfully destroyed."
   end
 
   private

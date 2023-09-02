@@ -5,8 +5,8 @@ class FishingController < ActionController::Base
   before_action :event_log
 
   def opened_email
-    data = Rails.root.join('app', 'assets', 'images', 'track.png').read
-    send_data data, type:Mime::Type.lookup_by_extension(:png), disposition:'inline'
+    data = Rails.root.join("app", "assets", "images", "track.png").read
+    send_data data, type:Mime::Type.lookup_by_extension(:png), disposition:"inline"
   end
 
   def clicked_link
@@ -14,7 +14,7 @@ class FishingController < ActionController::Base
     if @campaign && !@campaign.form_template.blank?
       render inline:@campaign.form_template
     else
-      render template:'fishing/form'
+      render template:"fishing/form"
     end
   end
 
@@ -27,7 +27,7 @@ class FishingController < ActionController::Base
     if @campaign && !@campaign.result_template.blank?
       render inline:@campaign.result_template
     else
-      render template:'fishing/result'
+      render template:"fishing/result"
     end
   end
 

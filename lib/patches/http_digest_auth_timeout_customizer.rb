@@ -1,7 +1,7 @@
 # @see http://qiita.com/zenpou/items/7e5694a594fc22daed79
 # @see https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/http_authentication.rb
 
-require 'action_controller/metal/http_authentication'
+require "action_controller/metal/http_authentication"
 module ActionController
   module HttpAuthentication
     module Digest

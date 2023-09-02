@@ -1,11 +1,11 @@
-require 'csv'
+require "csv"
 
 class Admin::EventsController < Admin::ApplicationController
 
   def index
     relation = Event.search(search)
     @events_count = relation.count
-    @events = relation.order([sort, order].join(' ')).limit(limit).offset(offset)
+    @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
 
     respond_to do |format|
       format.html { render }
@@ -57,11 +57,11 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def sort
-    Event.attribute_names.include?(params[:sort]) ? params[:sort] : 'id'
+    Event.attribute_names.include?(params[:sort]) ? params[:sort] : "id"
   end
 
   def order
-    %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : 'asc'
+    %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
   end
 
   def limit
