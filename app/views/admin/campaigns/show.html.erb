@@ -1,89 +1,93 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to icon_campaigns(text:t('.title')), admin_campaigns_path %></li>
-    <li class="breadcrumb-item active"><%= @campaign.cid %></li>
+    <li class="breadcrumb-item">
+      <%= link_to(icon_campaigns(text: t(".title")), admin_campaigns_path) %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= @campaign.cid %>
+    </li>
   </ol>
 </nav>
 <%= component_notice %>
 <p>
-  <%= link_to icon_action_edit(text:t('.edit_campaign')), edit_admin_campaign_path(@campaign), class:'btn btn-primary' %>
-  <%= link_to icon_action_destroy(text:t('.destroy')), admin_campaign_path(@campaign),  class:'btn btn-danger pull-right', method: :delete, data: { turbo_confirm: 'Are you sure?', turbo_method: 'delete'  } %>
+  <%= link_to(icon_action_edit(text: t(".edit_campaign")), edit_admin_campaign_path(@campaign), class:"btn btn-primary") %>
+  <%= link_to(icon_action_destroy(text: t(".destroy")), admin_campaign_path(@campaign),  class:"btn btn-danger pull-right", method: :delete, data: { turbo_confirm: "Are you sure?", turbo_method: "delete" }) %>
 </p>
 <div class="form-horizontal">
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.cid') %></label>
+    <label class="col-sm-2 control-label"><%= t(".cid") %></label>
     <div class="col-sm-10">
       <p class="form-control-static"><%= @campaign.cid %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.events') %></label>
+    <label class="col-sm-2 control-label"><%= t(".events") %></label>
     <div class="col-sm-10">
       <p class="form-control-static">
-        <%= link_to admin_events_path(search:"cid:#{@campaign.cid}") do %>
-        <span><%= Event.where(cid:@campaign.cid).count %></span>
+        <%= link_to admin_events_path(search: "cid: #{@campaign.cid}") do %>
+          <span><%= Event.where(cid: @campaign.cid).count %></span>
         <% end %>
       </p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.people') %></label>
+    <label class="col-sm-2 control-label"><%= t(".people") %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= Event.where(cid:@campaign.cid).distinct.count(:pid) %></p>
+      <p class="form-control-static"><%= Event.where(cid:  @campaign.cid).distinct.count(:pid) %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.url_template') %></label>
+    <label class="col-sm-2 control-label"><%= t(".url_template") %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= request.base_url + '/' + @campaign.cid + '/#{pid}' %></p>
+      <p class="form-control-static"><%= request.base_url + "/" + @campaign.cid + '/#{pid}' %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.note') %></label>
+    <label class="col-sm-2 control-label"><%= t(".note") %></label>
     <div class="col-sm-10">
       <pre class="form-control-static"><code><%= @campaign.note %></code></pre>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.form_template') %></label>
+    <label class="col-sm-2 control-label"><%= t(".form_template") %></label>
     <div class="col-sm-10">
       <pre class="form-control-static"><code><%= @campaign.form_template %></code></pre>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.result_template') %></label>
+    <label class="col-sm-2 control-label"><%= t(".result_template") %></label>
     <div class="col-sm-10">
       <pre class="form-control-static"><%= @campaign.result_template %></pre>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.updated_at') %></label>
+    <label class="col-sm-2 control-label"><%= t(".updated_at") %></label>
     <div class="col-sm-10">
       <p class="form-control-static"><%= @campaign.updated_at %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.created_at') %></label>
+    <label class="col-sm-2 control-label"><%= t(".created_at") %></label>
     <div class="col-sm-10">
       <p class="form-control-static"><%= @campaign.created_at %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.sample_image_url') %></label>
+    <label class="col-sm-2 control-label"><%= t(".sample_image_url") %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= link_to_image(cid:@campaign.cid, pid:'sample') %></p>
+      <p class="form-control-static"><%= link_to_image(cid: @campaign.cid, pid: "sample") %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.sample_form_url') %></label>
+    <label class="col-sm-2 control-label"><%= t(".sample_form_url") %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= link_to_form(cid:@campaign.cid, pid:'sample') %></p>
+      <p class="form-control-static"><%= link_to_form(cid: @campaign.cid, pid: "sample") %></p>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label"><%= t('.sample_result_url') %></label>
+    <label class="col-sm-2 control-label"><%= t(".sample_result_url") %></label>
     <div class="col-sm-10">
-      <p class="form-control-static"><%= link_to_result(cid:@campaign.cid, pid:'sample') %></p>
+      <p class="form-control-static"><%= link_to_result(cid: @campaign.cid, pid: "sample") %></p>
     </div>
   </div>
 </div>

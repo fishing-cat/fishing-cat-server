@@ -1,62 +1,48 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><%= icon_campaigns(text:t('.title')) %></li>
+    <li class="breadcrumb-item active"><%= icon_campaigns(text:t(".title")) %></li>
   </ol>
 </nav>
-
 <div class="alt-table-responsive">
   <div id="toolbar">
     <div class="form-inline" role="form">
-      <%= link_to icon_action_new(text:t('.new_campaign')), new_admin_campaign_path, class:'btn btn-primary' %>
+      <%= link_to(icon_action_new(text:t(".new_campaign")), new_admin_campaign_path, class: "btn btn-primary") %>
     </div>
   </div>
-  <table
-    class="table"
-    data-toggle="table"
-    data-search="true"
-    data-show-columns="true"
-    data-mobile-responsive="true"
-    data-show-export="true"
-    data-export-types="['csv', 'json', 'xml']"
-    data-export-options='{"fileName":"events"}'
-    data-classes="table table-no-bordered table-hover"
-    data-toolbar="#toolbar"
-    data-sort-order="desc"
-    data-page-size="100"
-    data-page-list="[100,1000,10000]">
+  <table class="table">
     <thead>
       <tr>
-        <th data-field="id" data-sortable="true" data-visible="false"><%= t(".id") %></th>
-        <th data-field="cid" data-sortable="true"><%= t(".cid") %></th>
-        <th data-field="events_count" data-sortable="true" data-align="right"><%= t(".events_count") %></th>
-        <th data-field="people_count" data-sortable="true" data-align="right"><%= t(".people_count") %></th>
-        <th data-field="created_at" data-sortable="true"><%= t(".created_at") %></th>
-        <th data-field="updated_at" data-sortable="true"><%= t(".updated_at") %></th>
-        <th data-field="note" data-sortable="true"><%= t(".note") %></th>
+        <th><%= t(".id") %></th>
+        <th><%= t(".cid") %></th>
+        <th><%= t(".events_count") %></th>
+        <th><%= t(".people_count") %></th>
+        <th><%= t(".created_at") %></th>
+        <th><%= t(".updated_at") %></th>
+        <th><%= t(".note") %></th>
       </tr>
     </thead>
     <tbody>
       <% @campaigns.each do |campaign| %>
-      <tr>
-        <td><%= campaign.id %></td>
-        <td><%= link_to campaign.cid, admin_campaign_path(campaign) %></td>
-        <td>
-          <%= link_to admin_events_path(search:"cid:#{campaign.cid}") do %>
-            <span><%= Event.where(cid:campaign.cid).count %></span>
-          <% end %>
-        </td>
-        <td>
-          <!--
+        <tr>
+          <td><%= campaign.id %></td>
+          <td><%= link_to campaign.cid, admin_campaign_path(campaign) %></td>
+          <td>
+            <%= link_to admin_events_path(search: "cid:#{campaign.cid}") do %>
+              <span><%= Event.where(cid: campaign.cid).count %></span>
+            <% end %>
+          </td>
+          <td>
+            <!--
           <%= link_to admin_people_path(search:"cid:#{campaign.cid}") do %>
             <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
           <% end %>
           -->
-          <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
-        </td>
-        <td><%= campaign.created_at %></td>
-        <td><%= campaign.updated_at %></td>
-        <td><%= campaign.note %></td>
-      </tr>
+            <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
+          </td>
+          <td><%= campaign.created_at %></td>
+          <td><%= campaign.updated_at %></td>
+          <td><%= campaign.note %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
