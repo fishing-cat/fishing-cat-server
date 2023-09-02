@@ -1,6 +1,9 @@
-<ol class="breadcrumb">
-  <li class="active"><%= icon_campaigns(text:t('.title')) %></li>
-</ol>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><%= icon_campaigns(text:t('.title')) %></li>
+  </ol>
+</nav>
+
 <div class="alt-table-responsive">
   <div id="toolbar">
     <div class="form-inline" role="form">
@@ -8,6 +11,7 @@
     </div>
   </div>
   <table
+    class="table"
     data-toggle="table"
     data-search="true"
     data-show-columns="true"
@@ -42,9 +46,12 @@
           <% end %>
         </td>
         <td>
+          <!--
           <%= link_to admin_people_path(search:"cid:#{campaign.cid}") do %>
             <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
           <% end %>
+          -->
+          <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
         </td>
         <td><%= campaign.created_at %></td>
         <td><%= campaign.updated_at %></td>
