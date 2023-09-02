@@ -2,16 +2,17 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 gem 'rails', '~> 7.0', '>= 7.0.7.2'
-gem 'puma'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem "sprockets-rails"
+gem "puma", "~> 5.0"
+gem "importmap-rails"
+gem "turbo-rails"
+gem "stimulus-rails"
+gem "sassc-rails"
+gem 'bootstrap', '~> 5.3.1'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
 gem 'search_cop', '~> 1.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'hashids', '~> 1.0'
-gem "psych", "~> 3.3"
 
 group :production do
   gem 'pg'
