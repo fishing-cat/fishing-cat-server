@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "bootstrap-table": "^1.11.2",
+    "tableexport.jquery.plugin": "^1.6.7"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fishing-cat/fishing-cat-server.git"
+  }
+}
