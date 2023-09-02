@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '3.2.2'
 
-gem 'rails', '~> 5.1.7'
-gem 'puma', '~> 3.7'
+gem 'rails', '~> 6.0.6.1'
+gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'search_cop', '~> 1.0'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'hashids', '~> 1.0'
+gem "psych", "~> 3.3"
 
 group :production do
   gem 'pg'
