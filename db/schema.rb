@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925183102) do
+ActiveRecord::Schema[6.1].define(version: 20170925183102) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "cid"
