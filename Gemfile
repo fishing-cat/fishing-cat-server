@@ -1,15 +1,16 @@
 source "https://rubygems.org"
 ruby "3.2.2"
 
+gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.1"
 gem "font-awesome-rails", "~> 4.7"
-gem "hashids", "~> 1.0"
-gem "jquery-rails"
+gem "hashids", "~> 1.0", ">= 1.0.6"
+gem "importmap-rails"
 gem "puma"
 gem "rails", "~> 7.0", ">= 7.0.7.2"
-gem "sass-rails", "~> 5.0"
-gem "search_cop", "~> 1.0"
+gem "search_cop", "~> 1.2", ">= 1.2.3"
 gem "turbo-rails"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :production do
   gem "pg"
@@ -31,9 +32,11 @@ group :development do
   gem "rubocop-rails", require: false
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "web-console", ">= 3.3.0"
+  gem "web-console"
 end
 
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "importmap-rails", "~> 1.2"
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+end
