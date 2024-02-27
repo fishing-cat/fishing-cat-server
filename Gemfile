@@ -7,7 +7,7 @@ gem "font-awesome-rails", "~> 4.7"
 gem "hashids", "~> 1.0", ">= 1.0.6"
 gem "importmap-rails"
 gem "puma"
-gem "rails", "~> 7.0", ">= 7.0.7.2"
+gem "rails", "~> 7.0"
 gem "search_cop", "~> 1.2", ">= 1.2.3"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
