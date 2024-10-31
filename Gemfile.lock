@@ -102,7 +102,7 @@ GEM
     coolline (0.5.0)
       unicode_utils (~> 1.4)
     crass (1.0.6)
-    date (3.3.3)
+    date (3.3.4)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -112,7 +112,7 @@ GEM
     ffi (1.15.5)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
-    globalid (1.2.0)
+    globalid (1.2.1)
       activesupport (>= 6.1)
     hashids (1.0.6)
     highline (2.1.0)
@@ -151,14 +151,14 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.2)
-    net-imap (0.3.7)
+    net-imap (0.5.0)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.1)
+    net-protocol (0.2.2)
       timeout
-    net-smtp (0.3.3)
+    net-smtp (0.5.0)
       net-protocol
     nio4r (2.5.9)
     nokogiri (1.16.7-arm64-darwin)
@@ -280,7 +280,7 @@ GEM
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.2.2)
     tilt (2.2.0)
-    timeout (0.4.0)
+    timeout (0.4.1)
     treetop (1.6.12)
       polyglot (~> 0.3)
     turbo-rails (1.4.0)
