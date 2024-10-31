@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_132423) do
+ActiveRecord::Schema[7.2].define(version: 2023_09_02_132423) do
   create_table "campaigns", force: :cascade do |t|
     t.string "cid"
     t.text "form_template"
@@ -57,5 +57,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_132423) do
     t.index ["request_path"], name: "index_events_on_request_path"
     t.index ["request_uri"], name: "index_events_on_request_uri"
   end
-
 end

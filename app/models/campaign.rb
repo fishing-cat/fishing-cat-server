@@ -22,6 +22,6 @@ class Campaign < ApplicationRecord
   end
 
   def salt
-    FishingCat::Server::Application.secrets.secret_key_base
+    FishingCat::Server::Application.secret_key_base
   end
 end
