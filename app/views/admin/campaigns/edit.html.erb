@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <%= link_to(icon_campaigns(text: t(".campaigns")), admin_campaigns_path) %>
+      <%= link_to(t(".campaigns"), admin_campaigns_path) %>
     </li>
     <li class="breadcrumb-item">
       <%= link_to(@campaign.cid, admin_campaign_path(@campaign)) %>

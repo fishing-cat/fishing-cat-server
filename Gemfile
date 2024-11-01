@@ -3,8 +3,8 @@ ruby "3.3.5"
 
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
+gem "bootstrap-icons-helper", "~> 2.0", ">= 2.0.2"
 gem "cssbundling-rails"
-gem "font-awesome-rails", "~> 4.7"
 gem "importmap-rails"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"

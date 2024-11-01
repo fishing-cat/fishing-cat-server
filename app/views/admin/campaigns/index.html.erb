@@ -1,24 +1,22 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><%= icon_campaigns(text:t(".title")) %></li>
+    <li class="breadcrumb-item active"><%= t(".title") %></li>
   </ol>
 </nav>
-<div class="alt-table-responsive">
-  <div id="toolbar">
-    <div class="form-inline" role="form">
-      <%= link_to(icon_action_new(text:t(".new_campaign")), new_admin_campaign_path, class: "btn btn-primary") %>
-    </div>
-  </div>
-  <table class="table">
+<div class="form-inline mb-3" role="form">
+  <%= link_to(icon_action_new(text:t(".new_campaign")), new_admin_campaign_path, class: "btn btn-primary") %>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered">
     <thead>
-      <tr>
-        <th><%= t(".id") %></th>
-        <th><%= t(".cid") %></th>
-        <th><%= t(".events_count") %></th>
-        <th><%= t(".people_count") %></th>
-        <th><%= t(".created_at") %></th>
-        <th><%= t(".updated_at") %></th>
-        <th><%= t(".note") %></th>
+      <tr class="align-top">
+        <th scope="col" class="text-nowrap"><%= t(".id") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".cid") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".events_count") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".people_count") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".created_at") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".updated_at") %></th>
+        <th scope="col" class="text-nowrap"><%= t(".note") %></th>
       </tr>
     </thead>
     <tbody>
@@ -39,8 +37,8 @@
           -->
             <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
           </td>
-          <td><%= campaign.created_at %></td>
-          <td><%= campaign.updated_at %></td>
+          <td><%= campaign.created_at.in_time_zone %></td>
+          <td><%= campaign.updated_at.in_time_zone %></td>
           <td><%= campaign.note %></td>
         </tr>
       <% end %>
