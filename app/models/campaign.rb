@@ -18,7 +18,11 @@ class Campaign < ApplicationRecord
   private
 
   def set_default
-    self.cid ||= Hashids.new(salt, 0, "abcdefghijklmnopqrstuvwxyz").encode(Time.now.to_i)
+    self.cid ||= Sqids.new(
+      blocklist: Set.new(%w[example]),
+      min_length: 0,
+      alphabet: "abcdefghijklmnopqrstuvwxyz"
+    ).encode([Time.now.to_i])
   end
 
   def salt
