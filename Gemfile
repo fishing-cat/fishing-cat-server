@@ -30,16 +30,11 @@ end
 
 group :development do
   gem "i18n-tasks", require: false
-  gem "listen", "~> 3.0.5"
-  gem "mutex_m" # for spring
   gem "ostruct" # for pry
   gem "pry-byebug", platforms: :mri
-  gem "pry-coolline"
   gem "pry-rails"
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"
 end
 
