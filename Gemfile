@@ -5,13 +5,13 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
 gem "cssbundling-rails"
 gem "font-awesome-rails", "~> 4.7"
-gem "hashids", "~> 1.0", ">= 1.0.6"
 gem "importmap-rails"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"
 gem "sassc-rails" # for cssbundling-rails
 gem "search_cop", "~> 1.4"
 gem "sprockets-rails"
+gem "sqids", "~> 0.2.1"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
