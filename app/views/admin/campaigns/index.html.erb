@@ -37,8 +37,8 @@
           -->
             <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
           </td>
-          <td><%= campaign.created_at %></td>
-          <td><%= campaign.updated_at %></td>
+          <td><%= campaign.created_at.in_time_zone %></td>
+          <td><%= campaign.updated_at.in_time_zone %></td>
           <td><%= campaign.note %></td>
         </tr>
       <% end %>
