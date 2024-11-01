@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby "3.3.5"
 
 gem "bootsnap", require: false
-gem "bootstrap", "~> 5.3.1"
+gem "bootstrap", "~> 5.3", ">= 5.3.3"
 gem "cssbundling-rails"
 gem "font-awesome-rails", "~> 4.7"
 gem "hashids", "~> 1.0", ">= 1.0.6"
@@ -10,7 +10,7 @@ gem "importmap-rails"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"
 gem "sassc-rails" # for cssbundling-rails
-gem "search_cop", "~> 1.2", ">= 1.2.3"
+gem "search_cop", "~> 1.4"
 gem "sprockets-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
@@ -23,7 +23,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "byebug", platform: :mri
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
-  gem "dotenv-rails", "~> 2.2"
+  gem "dotenv-rails", "~> 3.1", ">= 3.1.4"
   gem "rubocop-rails-omakase", require: false
   gem "sqlite3"
 end
