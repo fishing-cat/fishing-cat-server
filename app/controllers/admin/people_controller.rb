@@ -2,7 +2,7 @@ class Admin::PeopleController < Admin::ApplicationController
   def index
     relation = Event.search(search)
     @entries = relation.where.not(cid: [nil, ""], pid: [nil, ""]).distinct.pluck(:cid, :pid).compact
-    @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
+    @events = relation.order(sort => order).limit(limit).offset(offset)
     @records = []
     @entries.each do |cid, pid|
       record = {}
