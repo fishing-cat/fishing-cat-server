@@ -4,7 +4,7 @@ class Admin::EventsController < Admin::ApplicationController
   def index
     relation = Event.search(search)
     @events_count = relation.count
-    @events = relation.order([sort, order].join(" ")).limit(limit).offset(offset)
+    @events = relation.order(sort => order).limit(limit).offset(offset)
 
     respond_to do |format|
       format.html { render }
