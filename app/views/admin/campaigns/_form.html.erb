@@ -1,11 +1,8 @@
 <%= form_for([:admin, campaign]) do |f| %>
   <% if campaign.errors.any? %>
     <div class="alert alert-danger alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
       <p>
-        <strong><%= icon_error(text:pluralize(campaign.errors.count, "error")) %></strong>
+        <strong><%= icon_error(text: pluralize(campaign.errors.count, "error")) %></strong>
         <span>prohibited this campaign from being saved:</span>
       </p>
       <ul>
@@ -13,53 +10,52 @@
           <li><%= message %></li>
         <% end %>
       </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   <% end %>
-  <div class="container">
-    <div class="fishing-cat-attr">
-      <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:cid) %></label>
-      <div class="col-xs-10">
-        <%= f.text_field(:cid, class: "form-control") %>
-      </div>
+  <div class="row">
+    <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:cid) %></label>
+    <div class="col-xs-10">
+      <%= f.text_field(:cid, class: "form-control") %>
     </div>
-    <div class="fishing-cat-attr">
-      <label class="col-xs-2 col-form-label fw-bold"><%= t(".url_template") %></label>
-      <div class="col-xs-10">
-        <p class="form-control-plaintext"><%= request.base_url + "/" + @campaign.cid + '/#{pid}' %></p>
-      </div>
+  </div>
+  <div class="row">
+    <label class="col-xs-2 col-form-label fw-bold"><%= t(".url_template") %></label>
+    <div class="col-xs-10">
+      <p class="form-control-plaintext"><%= request.base_url + "/" + @campaign.cid + '/#{pid}' %></p>
     </div>
-    <div class="fishing-cat-attr">
-      <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:note) %></label>
-      <div class="col-xs-10">
-        <%= f.text_area(:note, class: "form-control", rows: 3) %>
-      </div>
+  </div>
+  <div class="row">
+    <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:note) %></label>
+    <div class="col-xs-10">
+      <%= f.text_area(:note, class: "form-control", rows: 3) %>
     </div>
-    <div class="fishing-cat-attr">
-      <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:form_template) %></label>
-      <div class="col-xs-10">
-        <p>
-          <%= f.button(type: "submit", value: "load_default_form_template", class: "btn btn-sm btn-info") do %>
-            <%= icon_load(text: t(".load_default_form_template")) %>
-          <% end %>
-        </p>
-        <%= f.text_area(:form_template, class: "form-control", rows: 25) %>
-      </div>
+  </div>
+  <div class="row">
+    <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:form_template) %></label>
+    <div class="col-xs-10">
+      <p>
+        <%= f.button(type: "submit", value: "load_default_form_template", class: "btn btn-sm btn-info") do %>
+          <%= icon_load(text: t(".load_default_form_template")) %>
+        <% end %>
+      </p>
+      <%= f.text_area(:form_template, class: "form-control", rows: 25) %>
     </div>
-    <div class="fishing-cat-attr">
-      <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:result_template) %></label>
-      <div class="col-xs-10">
-        <p>
-          <%= f.button(type: "submit", value: "load_default_result_template", class: "btn btn-sm btn-info") do %>
-            <%= icon_load(text: t(".load_default_result_template")) %>
-          <% end %>
-        </p>
-        <%= f.text_area(:result_template, class: "form-control", rows: 25) %>
-      </div>
+  </div>
+  <div class="row">
+    <label class="col-xs-2 col-form-label fw-bold"><%= f.label(:result_template) %></label>
+    <div class="col-xs-10">
+      <p>
+        <%= f.button(type: "submit", value: "load_default_result_template", class: "btn btn-sm btn-info") do %>
+          <%= icon_load(text: t(".load_default_result_template")) %>
+        <% end %>
+      </p>
+      <%= f.text_area(:result_template, class: "form-control", rows: 25) %>
     </div>
-    <div class="my-4 d-grid col-xs-12 mx-auto">
-      <%= f.button(type: "submit", class: "btn btn-primary") do %>
-        <%= icon_action_save(text: i18n_submit_default_value(f)) %>
-      <% end %>
-    </div>
+  </div>
+  <div class="mt-4 d-grid col-xs-12 mx-auto">
+    <%= f.button(type: "submit", class: "btn btn-primary") do %>
+      <%= icon_action_save(text: i18n_submit_default_value(f)) %>
+    <% end %>
   </div>
 <% end %>
