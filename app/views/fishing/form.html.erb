@@ -3,39 +3,36 @@
   <head>
     <title>Login Page</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag :fishing %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag(:fishing) %>
   </head>
   <body>
-    <div class="container">
+    <div class="container my-2">
       <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
           <h2>Login</h2>
           <p>Welcome. Please enter your personal information in the fields below.</p>
         </div>
       </div>
-      <div class="form-horizontal">
-        <%= form_tag do |f| %>
-          <%= hidden_field_tag :cid, params[:cid] %>
-          <%= hidden_field_tag :pid, params[:pid] %>
-          <div class="form-group">
-            <%= label_tag :name, "User Name", class:"col-sm-offset-3 col-sm-2 control-label" %>
-            <div class="col-sm-4">
-              <%= text_field_tag "", "", id:"name", class:"form-control" %>
-            </div>
+      <%= form_tag do |f| %>
+        <%= hidden_field_tag(:cid, params[:cid]) %>
+        <%= hidden_field_tag(:pid, params[:pid]) %>
+        <div class="row">
+          <%= label_tag(:name, "User Name", class: "col-xs-2 col-form-label") %>
+          <div class="col-xs-10">
+            <%= text_field_tag("", "", id: "name", class: "form-control") %>
           </div>
-          <div class="form-group">
-            <%= label_tag :password, "User Password", class:"col-sm-offset-3 col-sm-2 control-label" %>
-            <div class="col-sm-4">
-              <%= password_field_tag "", "", id:"password", class:"form-control" %>
-            </div>
+        </div>
+        <div class="row">
+          <%= label_tag(:password, "User Password", class: "col-xs-2 col-form-label") %>
+          <div class="col-xs-10">
+            <%= password_field_tag("", "", id: "password", class: "form-control") %>
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-5 col-sm-4">
-              <%= submit_tag "Login", class:"btn btn-primary" %>
-            </div>
+          <div class="mt-4 d-grid col-xs-12 mx-auto">
+            <%= submit_tag("Login", class: "btn btn-primary") %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>

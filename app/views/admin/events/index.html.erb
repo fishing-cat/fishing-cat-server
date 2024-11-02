@@ -3,31 +3,34 @@
     <li class="breadcrumb-item active" aria-current="page"><%= t(".title") %></li>
   </ol>
 </nav>
-<div class="form-inline mb-3" role="form">
-  <%= link_to(icon_download(text:t(".download_csv")), admin_events_path(search: params[:search], format: :csv), class: "btn btn-info") %>
+<%= component_notice %>
+<div class="row mb-4">
+  <div clsss="col-auto me-auto">
+    <%= link_to(icon_download(text:t(".download_csv")), admin_events_path(search: params[:search], format: :csv), class: "btn btn-info") %>
+  </div>
 </div>
 <div class="table-responsive">
   <table class="table table-hover table-sm table-bordered">
     <thead>
-      <tr class="align-top">
-        <th class="text-nowrap"><%= t(".id") %></th>
-        <th class="text-nowrap"><%= t(".created_at") %></th>
-        <th class="text-nowrap"><%= t(".cid") %></th>
-        <th class="text-nowrap"><%= t(".pid") %></th>
-        <th class="text-nowrap"><%= t(".action") %></th>
-        <th class="text-nowrap"><%= t(".fingerprint") %></th>
-        <th class="text-nowrap"><%= t(".remote_ip") %></th>
-        <th class="text-nowrap"><%= t(".query_string") %></th>
-        <th class="text-nowrap"><%= t(".request_method") %></th>
-        <th class="text-nowrap"><%= t(".request_path") %></th>
-        <th class="text-nowrap"><%= t(".request_uri") %></th>
-        <th class="text-nowrap"><%= t(".http_user_agent") %></th>
-        <th class="text-nowrap"><%= t(".http_dnt") %></th>
-        <th class="text-nowrap"><%= t(".http_referer") %></th>
-        <th class="text-nowrap"><%= t(".http_accept") %></th>
-        <th class="text-nowrap"><%= t(".http_accept_encoding") %></th>
-        <th class="text-nowrap"><%= t(".http_accept_language") %></th>
-        <th class="text-nowrap"><%= t(".params") %></th>
+      <tr class="align-top text-nowrap">
+        <th><%= t(".id") %></th>
+        <th><%= t(".created_at") %></th>
+        <th><%= t(".cid") %></th>
+        <th><%= t(".pid") %></th>
+        <th><%= t(".action") %></th>
+        <th><%= t(".fingerprint") %></th>
+        <th><%= t(".remote_ip") %></th>
+        <th><%= t(".query_string") %></th>
+        <th><%= t(".request_method") %></th>
+        <th><%= t(".request_path") %></th>
+        <th><%= t(".request_uri") %></th>
+        <th><%= t(".http_user_agent") %></th>
+        <th><%= t(".http_dnt") %></th>
+        <th><%= t(".http_referer") %></th>
+        <th><%= t(".http_accept") %></th>
+        <th><%= t(".http_accept_encoding") %></th>
+        <th><%= t(".http_accept_language") %></th>
+        <th><%= t(".params") %></th>
       </tr>
     </thead>
     <tbody>

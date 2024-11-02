@@ -17,17 +17,17 @@ en:
         cid: Campaign ID
         title: Campaigns
         note: Note
-        edit_campaign: Edit Campaign
+        edit: Edit Campaign
         form_template: Form Template
         result_template: Result Template
         updated_at: Updated At
         created_at: Created At
-        destroy: Destroy
+        destroy: Delete Campaign
         events: Events
         url_template: URL Template
         sample_image_url: Sample Image URL
         sample_form_url: Sample Form URL
-        sample_resiult_url: Sample Result URL
+        sample_result_url: Sample Result URL
         people: People
       new:
         action: New Campaign

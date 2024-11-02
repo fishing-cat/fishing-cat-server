@@ -12,7 +12,7 @@ module IconHelper
   end
 
   def icon_error(options = {})
-    icon_bootstrap("warning", options)
+    icon_bootstrap("exclamation-triangle-fill", options)
   end
 
   def icon_action_new(options = {})
