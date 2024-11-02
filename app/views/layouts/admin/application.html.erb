@@ -6,9 +6,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "admin", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag("admin", "data-turbo-track": "reload") %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag("admin", "data-turbo-track": "reload", type: "module") %>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
@@ -21,21 +21,21 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <%= link_to(
-                icon_campaigns(text:t(".campaigns"), fw: true),
+                icon_campaigns(text: t(".campaigns")),
                 admin_campaigns_path,
                 class: ["nav-link", params[:controller] == "admin/campaigns" ? "active": ""],
               ) %>
             </li>
             <li class="nav-item">
               <%= link_to(
-                icon_events(text:t(".events"), fw: true),
+                icon_events(text: t(".events")),
                 admin_events_path,
                 class: ["nav-link", params[:controller] == "admin/events" ? "active": ""],
               ) %>
             </li>
             <li class="nav-item">
               <%= link_to(
-                icon_people(text:t(".people"), fw: true),
+                icon_people(text: t(".people")),
                 admin_people_path,
                 class: ["nav-link", params[:controller] == "admin/people" ? "active": ""],
               ) %>
