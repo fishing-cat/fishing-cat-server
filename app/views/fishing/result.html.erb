@@ -3,17 +3,14 @@
   <head>
     <title>Result Page</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag :fishing %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag(:fishing) %>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-offset-3 col-sm-6">
-          <h2>Result</h2>
-          <p>This is an anti-phishing training site.</p>
-          <%= image_tag("logo.png", class: "img-responsive center-block") %>
-        </div>
-      </div>
+    <div class="container my-2" style="max-width: 540px;">
+      <h2>Result</h2>
+      <p>This is an anti-phishing training site.</p>
+      <%= image_tag("logo.png", class: "img-fluid mx-auto d-block") %>
     </div>
   </body>
 </html>

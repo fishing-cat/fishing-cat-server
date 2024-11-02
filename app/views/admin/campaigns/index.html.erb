@@ -1,17 +1,18 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><%= icon_campaigns(text:t(".title")) %></li>
+    <li class="breadcrumb-item active"><%= t(".title") %></li>
   </ol>
 </nav>
-<div class="alt-table-responsive">
-  <div id="toolbar">
-    <div class="form-inline" role="form">
-      <%= link_to(icon_action_new(text:t(".new_campaign")), new_admin_campaign_path, class: "btn btn-primary") %>
-    </div>
+<%= component_notice %>
+<div class="row mb-4">
+  <div clsss="col-auto me-auto">
+    <%= link_to(icon_action_new(text: t(".new_campaign")), new_admin_campaign_path, class: "btn btn-primary") %>
   </div>
-  <table class="table">
+</div>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered">
     <thead>
-      <tr>
+      <tr class="align-top text-nowrap">
         <th><%= t(".id") %></th>
         <th><%= t(".cid") %></th>
         <th><%= t(".events_count") %></th>
@@ -25,9 +26,9 @@
       <% @campaigns.each do |campaign| %>
         <tr>
           <td><%= campaign.id %></td>
-          <td><%= link_to campaign.cid, admin_campaign_path(campaign) %></td>
+          <td><%= link_to(campaign.cid, admin_campaign_path(campaign)) %></td>
           <td>
-            <%= link_to admin_events_path(search: "cid:#{campaign.cid}") do %>
+            <%= link_to( admin_events_path(search: "cid:#{campaign.cid}")) do %>
               <span><%= Event.where(cid: campaign.cid).count %></span>
             <% end %>
           </td>
@@ -39,8 +40,8 @@
           -->
             <span><%= Event.where(cid:campaign.cid).distinct.count(:pid) %></span>
           </td>
-          <td><%= campaign.created_at %></td>
-          <td><%= campaign.updated_at %></td>
+          <td><%= campaign.created_at.in_time_zone %></td>
+          <td><%= campaign.updated_at.in_time_zone %></td>
           <td><%= campaign.note %></td>
         </tr>
       <% end %>

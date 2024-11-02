@@ -25,12 +25,12 @@ class Admin::CampaignsController < Admin::ApplicationController
     when "load_default_result_template"
       @campaign.result_template = Campaign.default_template("result")
       render :new, status: :unprocessable_entity
-      return
     else
       if @campaign.save
-        redirect_to [:admin, @campaign], notice: "Campaign was successfully created."
+        flash[:notice] = "Campaign was successfully created."
+        redirect_to [:admin, @campaign]
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
       return
     end
@@ -49,9 +49,10 @@ class Admin::CampaignsController < Admin::ApplicationController
       return
     else
       if @campaign.save
-        redirect_to [:admin, @campaign], notice: "Campaign was successfully updated."
+        flash[:notice] = "Campaign was successfully updated."
+        redirect_to [:admin, @campaign]
       else
-        render :edit
+        render :edit, status: :unprocessable_entity
       end
       return
     end
@@ -59,7 +60,8 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   def destroy
     @campaign.destroy
-    redirect_to admin_campaigns_url, notice: "Campaign was successfully destroyed."
+    flash[:notice] = "Campaign was successfully destroyed."
+    redirect_to admin_campaigns_url, status: :see_other
   end
 
   private

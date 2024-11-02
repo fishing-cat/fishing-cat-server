@@ -1,49 +1,58 @@
 module IconHelper
-  def icon_save(options = {})
-    font_awesome_icon("save", options)
+  def icon_load(options = {})
+    icon_bootstrap("download", options)
   end
 
   def icon_download(options = {})
-    font_awesome_icon("download", options)
+    icon_bootstrap("cloud-arrow-down-fill", options)
+  end
+
+  def icon_info(options = {})
+    icon_bootstrap("info-circle-fill", options)
   end
 
   def icon_error(options = {})
-    font_awesome_icon("warning", options)
+    icon_bootstrap("exclamation-triangle-fill", options)
   end
 
   def icon_action_new(options = {})
-    font_awesome_icon("plus", options)
+    icon_bootstrap("plus-lg", options)
   end
 
   def icon_action_edit(options = {})
-    font_awesome_icon("pencil", options)
+    icon_bootstrap("pencil-fill", options)
   end
 
   def icon_action_destroy(options = {})
-    font_awesome_icon("remove", options)
+    icon_bootstrap("trash-fill", options)
+  end
+
+  def icon_action_save(options = {})
+    icon_bootstrap("floppy-fill", options)
   end
 
   def icon_campaigns(options = {})
-    font_awesome_icon("bullhorn", options)
+    icon_bootstrap("megaphone-fill", options)
   end
 
   def icon_events(options = {})
-    font_awesome_icon("calendar", options)
+    icon_bootstrap("calendar-event-fill", options)
   end
 
   def icon_people(options = {})
-    font_awesome_icon("user-o", options)
+    icon_bootstrap("people-fill", options)
   end
 
   private
 
-  def font_awesome_icon(names, options)
-    names = [names]
-    names << "fw" if options[:fw]
+  def icon_bootstrap(name, options)
     if options[:text]
-      fa_icon(names, text: options[:text])
+      capture do
+        concat bootstrap_icon(name, class: " me-1 mb-1")
+        concat options[:text]
+      end
     else
-      fa_icon(names)
+      bootstrap_icon(name, class: " me-1 mb-1")
     end
   end
 end
