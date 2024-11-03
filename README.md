@@ -36,11 +36,11 @@ https://fishing-cat-server.herokuapp.com/forms/qbamjkxvd/eapvdrrbd
 
 ### デプロイ
 
-Fishing Cat ServerはRuby on Railsで作成されていますのでRuby on Railsを利用している方であれば容易にサーバへデプロイすることが可能です。
+Fishing Cat ServerはRuby on Railsで作成されています。Ruby on Railsを利用している方であれば容易にサーバへデプロイすることが可能です。
 
 より簡単に訓練用サイトを配置できるようにHeroku Buttonにも対応しています。Herokuのアカウントを作成の上、下記のボタンをクリックします。クリック後はHeroku Buttonのマニュアル通りに手続きを進めてください。
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/fishing-cat/fishing-cat-server)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fishing-cat/fishing-cat-server)
 
 ### 環境変数
 
