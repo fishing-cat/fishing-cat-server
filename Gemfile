@@ -4,6 +4,7 @@ ruby "3.3.5"
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
 gem "bootstrap-icons-helper", "~> 2.0", ">= 2.0.2"
+gem "csv"
 gem "dartsass-rails"
 gem "importmap-rails"
 gem "puma", ">= 5.0"
