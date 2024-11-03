@@ -1,7 +1,7 @@
 databases:
   - name: fishing-cat-server
-    databaseName: fishing-cat-server
-    user: fishing-cat-server
+    databaseName: fishing_cat_server
+    user: fishing_cat_server
 services:
   - name: fishing-cat-server
     type: web
@@ -12,7 +12,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: fishing-cat-server
+          name: fishing_cat_server
           property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
