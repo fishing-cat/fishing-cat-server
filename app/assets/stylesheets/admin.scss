@@ -1,5 +1,5 @@
-@import "bootstrap";
-@import "highlight.js/styles/default.css";
+@use "bootstrap"; // from bootstrap.gem
+@use "highlight.js/styles/default.css"; // vendor/assets/stylesheets/highlight.js/styles/default.css
 
 body {
   padding-top: 70px;
