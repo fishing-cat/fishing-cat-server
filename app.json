@@ -12,7 +12,7 @@
     "rails"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate"
+    "postdeploy": "bundle exec rails db:prepare"
   },
   "addons": [
     "heroku-postgresql"
