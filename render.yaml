@@ -5,6 +5,7 @@ databases:
 services:
   - name: fishing-cat-server
     type: web
+    plan: free
     runtime: ruby
     buildCommand: "./bin/render-build.bash"
     startCommand: "bin/rails server -p ${PORT:-5000} -e production"
