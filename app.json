@@ -19,9 +19,6 @@
   ],
   "success_url": "/admin",
   "env": {
-    "RAILS_FORCE_SSL": {
-      "value": "enabled"
-    },
     "FISHING_CAT_ADMIN_REALM": {
       "value": "admin"
     },
