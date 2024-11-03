@@ -3,16 +3,22 @@
   "description": "Fishing Cat Server",
   "repository": "https://github.com/fishing-cat/fishing-cat-server",
   "website": "https://github.com/fishing-cat/fishing-cat-server",
-  "keywords": ["phishing", "security", "ruby", "rails", "cat", "Rails 7"],
+  "keywords": [
+    "phishing",
+    "security",
+    "ruby",
+    "rails",
+    "cat",
+    "rails"
+  ],
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate"
+    "postdeploy": "bundle exec rails db:prepare"
   },
-  "addons": ["heroku-postgresql"],
+  "addons": [
+    "heroku-postgresql"
+  ],
   "success_url": "/admin",
   "env": {
-    "RAILS_FORCE_SSL": {
-      "value": "enabled"
-    },
     "FISHING_CAT_ADMIN_REALM": {
       "value": "admin"
     },
