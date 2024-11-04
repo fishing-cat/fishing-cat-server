@@ -7,6 +7,7 @@ gem "bootstrap-icons-helper", "~> 2.0", ">= 2.0.2"
 gem "csv"
 gem "dartsass-rails"
 gem "importmap-rails"
+gem "mini_racer" # bootstrap v5.3.3 => autoprefixer-rails => execjs => mini_racer
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"
 gem "search_cop", "~> 1.4"
