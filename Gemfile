@@ -8,6 +8,7 @@ gem "csv"
 gem "dartsass-rails"
 gem "importmap-rails"
 gem "mini_racer" # bootstrap v5.3.3 => autoprefixer-rails => execjs => mini_racer
+gem "ostruct" # pry => ostruct, json => ostruct, until Ruby 3.5
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"
 gem "search_cop", "~> 1.4"
@@ -31,7 +32,6 @@ end
 
 group :development do
   gem "i18n-tasks", require: false
-  gem "ostruct" # for pry
   gem "pry-byebug", platforms: :mri
   gem "pry-rails"
   gem "rubocop", require: false
