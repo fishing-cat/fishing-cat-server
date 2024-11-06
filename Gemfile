@@ -31,6 +31,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "foreman"
   gem "i18n-tasks", require: false
   gem "pry-byebug", platforms: :mri
   gem "pry-rails"
