@@ -1,5 +1,9 @@
 # Development
 
+## Requirements
+
+- [Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+
 ## Setup
 
 ```sh
@@ -10,7 +14,9 @@ $ ./bin/rails db:prepare
 $ ./bin/dev
 ```
 
-## Stylesheet
+## Notes
+
+### Stylesheet
 
 The Fishing Cat Server uses only the [dartsass-rails.gem](https://rubygems.org/gems/dartsass-rails) for the implemention of Sass in integration with Rails.
 
@@ -34,7 +40,7 @@ Packages:
   - repo: https://cdnjs.com/libraries/highlight.js
   - management: curl
 
-## JavaScript
+### JavaScript
 
 The Fishing Cat Server uses only the [importmap-rails.gem](https://rubygems.org/gems/importmap-rails) for the implemention of [import-map](https://github.com/WICG/import-maps) in integration with Rails.
 
