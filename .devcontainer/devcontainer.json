@@ -1,0 +1,6 @@
+{
+	"name": "Fishing Cat Server",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+}

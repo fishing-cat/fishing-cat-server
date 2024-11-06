@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "3.3.5"
+ruby '>= 3.3'
 
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
@@ -7,6 +7,8 @@ gem "bootstrap-icons-helper", "~> 2.0", ">= 2.0.2"
 gem "csv"
 gem "dartsass-rails"
 gem "importmap-rails"
+gem "mini_racer" # bootstrap v5.3.3 => autoprefixer-rails => execjs => mini_racer
+gem "ostruct" # pry => ostruct, json => ostruct, until Ruby 3.5
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.2.2"
 gem "search_cop", "~> 1.4"
@@ -29,8 +31,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "foreman"
   gem "i18n-tasks", require: false
-  gem "ostruct" # for pry
   gem "pry-byebug", platforms: :mri
   gem "pry-rails"
   gem "rubocop", require: false
