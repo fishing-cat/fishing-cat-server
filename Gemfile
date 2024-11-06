@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "3.3.5"
+ruby '>= 3.3'
 
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
