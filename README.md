@@ -91,7 +91,7 @@ $ echo -n 'username:realm:password' | md5
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The Fishing Cat Server is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Author
 
