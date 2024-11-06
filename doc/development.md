@@ -3,8 +3,9 @@
 ## Setup
 
 ```sh
-$ ./bin/bundle install
 $ cp env.example .env
+$ ./bin/bundle config set without production
+$ ./bin/bundle install
 $ ./bin/rails db:prepare
 $ ./bin/dev
 ```
