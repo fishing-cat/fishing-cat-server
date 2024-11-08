@@ -32,10 +32,3 @@ Style/PercentLiteralDelimiters:
     - 'db/migrate/20170215054721_create_events.rb'
     - 'db/migrate/20170907091911_add_attrs_to_events.rb'
 
-# Offense count: 6
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: AllowMultipleReturnValues.
-Style/RedundantReturn:
-  Exclude:
-    - 'app/controllers/admin/campaigns_controller.rb'
-    - 'app/models/campaign.rb'
