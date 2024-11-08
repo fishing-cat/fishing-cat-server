@@ -9,7 +9,7 @@ class Admin::PeopleController < Admin::ApplicationController
       record[:cid] = cid
       record[:pid] = pid
       %i[opened_email clicked_link submitted_data viewed_result].each do |action|
-        record[action] = @events.select{ |e|
+        record[action] = @events.select { |e|
           e.cid == cid && e.pid == pid && e.action == action.to_s
         }.size
       end

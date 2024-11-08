@@ -81,6 +81,9 @@ Layout/HashAlignment:
 Layout/IndentationConsistency:
   Enabled: true
 
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
   Enabled: true
 
