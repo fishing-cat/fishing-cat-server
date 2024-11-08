@@ -8,7 +8,7 @@ class Admin::PeopleController < Admin::ApplicationController
       record = {}
       record[:cid] = cid
       record[:pid] = pid
-      %i(opened_email clicked_link submitted_data viewed_result).each do |action|
+      %i[opened_email clicked_link submitted_data viewed_result].each do |action|
         record[action] = @events.select{ |e|
           e.cid == cid && e.pid == pid && e.action == action.to_s
         }.size
@@ -40,7 +40,7 @@ class Admin::PeopleController < Admin::ApplicationController
     end
 
     def order
-      %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
+      %w[asc desc].include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
     end
 
     def limit

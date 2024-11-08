@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :action
       t.timestamps
     end
-    %i(cid pid action).each do |column|
+    %i[cid pid action].each do |column|
       add_index :events, column
     end
   end
