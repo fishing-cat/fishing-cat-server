@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "root#show", format: false
     namespace :campaigns do
-      resources :templates, only: [:show], param: :name, format: false
+      resources :templates, only: [ :show ], param: :name, format: false
     end
     resources :campaigns, param: :cid
-    resources :events, only: [:index], format: /html|json|csv/
-    resources :people, only: [:index], format: /html|json/
+    resources :events, only: [ :index ], format: /html|json|csv/
+    resources :people, only: [ :index ], format: /html|json/
   end
   get "/results/(:cid/(:pid))", to: "fishing#viewed_result", format: false, as: "fishing_result"
   get "/images/(:cid/(:pid))", to: "fishing#opened_email", format: false

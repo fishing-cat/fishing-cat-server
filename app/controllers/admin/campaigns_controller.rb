@@ -1,5 +1,5 @@
 class Admin::CampaignsController < Admin::ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :set_campaign, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @campaigns = Campaign.all.order(updated_at: :desc)
@@ -28,7 +28,7 @@ class Admin::CampaignsController < Admin::ApplicationController
     else
       if @campaign.save
         flash[:notice] = "Campaign was successfully created."
-        redirect_to [:admin, @campaign]
+        redirect_to [ :admin, @campaign ]
       else
         render :new, status: :unprocessable_entity
       end
@@ -50,7 +50,7 @@ class Admin::CampaignsController < Admin::ApplicationController
     else
       if @campaign.save
         flash[:notice] = "Campaign was successfully updated."
-        redirect_to [:admin, @campaign]
+        redirect_to [ :admin, @campaign ]
       else
         render :edit, status: :unprocessable_entity
       end
@@ -66,11 +66,11 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   private
 
-  def set_campaign
-    @campaign = Campaign.find_by(cid: params[:cid])
-  end
+    def set_campaign
+      @campaign = Campaign.find_by(cid: params[:cid])
+    end
 
-  def campaign_params
-    params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
-  end
+    def campaign_params
+      params.require(:campaign).permit(:cid, :note, :form_template, :result_template)
+    end
 end

@@ -22,7 +22,7 @@ class Event < ApplicationRecord
       http_accept: request.accept,
       http_accept_encoding: request.accept_encoding,
       http_accept_language: request.accept_language,
-      params: params.to_json,
+      params: params.to_json
     }
     Event.create(event)
   end
