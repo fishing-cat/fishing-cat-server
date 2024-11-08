@@ -18,8 +18,6 @@ Style/StringLiterals:
 # SupportedStyles: leading, trailing
 Layout/DotPosition:
   Enabled: true
-  # Exclude:
-  #   - 'bin/yarn'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -57,13 +55,8 @@ Layout/EmptyLineAfterGuardClause:
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: true
 
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - "db/schema.rb"
+  Enabled: true
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
