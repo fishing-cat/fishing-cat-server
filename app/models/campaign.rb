@@ -4,7 +4,7 @@ class Campaign < ApplicationRecord
   def self.default_template(name)
     return nil if name !~ /^[a-z]+$/
 
-    return Rails.root.join("app", "views", "fishing").children.select{ |path|
+    return Rails.root.join("app", "views", "fishing").children.select { |path|
       path.basename == Pathname("#{name}.html.erb")
     }.first&.read&.html_safe
   end
@@ -17,15 +17,15 @@ class Campaign < ApplicationRecord
 
   private
 
-  def set_default
-    self.cid ||= Sqids.new(
-      blocklist: Set.new(%w[example]),
-      min_length: 0,
-      alphabet: "abcdefghijklmnopqrstuvwxyz"
-    ).encode([Time.now.to_i])
-  end
+    def set_default
+      self.cid ||= Sqids.new(
+        blocklist: Set.new(%w[example]),
+        min_length: 0,
+        alphabet: "abcdefghijklmnopqrstuvwxyz"
+      ).encode([ Time.now.to_i ])
+    end
 
-  def salt
-    FishingCat::Server::Application.secret_key_base
-  end
+    def salt
+      FishingCat::Server::Application.secret_key_base
+    end
 end

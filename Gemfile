@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '>= 3.3'
+ruby "~> 3.3.0"
 
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3", ">= 5.3.3"
@@ -7,13 +7,13 @@ gem "bootstrap-icons-helper", "~> 2.0", ">= 2.0.2"
 gem "csv"
 gem "dartsass-rails"
 gem "importmap-rails"
-gem "mini_racer" # bootstrap v5.3.3 => autoprefixer-rails => execjs => mini_racer
 gem "ostruct" # pry => ostruct, json => ostruct, until Ruby 3.5
+gem "propshaft"
 gem "puma", ">= 5.0"
-gem "rails", "~> 7.2.2"
+gem "rails", "~> 8.0.0"
 gem "search_cop", "~> 1.4"
-gem "sprockets-rails"
 gem "sqids", "~> 0.2.1"
+gem "thruster", require: false
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
@@ -27,7 +27,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "dotenv-rails", "~> 3.1", ">= 3.1.4"
   gem "rubocop-rails-omakase", require: false
-  gem "sqlite3"
+  gem "sqlite3", ">= 2.1"
 end
 
 group :development do

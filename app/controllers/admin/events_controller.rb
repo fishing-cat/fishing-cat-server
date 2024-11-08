@@ -12,16 +12,15 @@ class Admin::EventsController < Admin::ApplicationController
       format.json {
         render json: {
           total: @events_count,
-          rows: @events,
+          rows: @events
         }
       }
     end
-
   end
 
   def send_events_csv(events)
     csv_data = CSV.generate do |csv|
-      column_names = %w(id cid pid action updated_at created_at fingerprint remote_ip query_string request_method request_path request_uri http_user_agent http_dnt http_referer http_accept http_accept_encoding http_accept_language params)
+      column_names = %w[id cid pid action updated_at created_at fingerprint remote_ip query_string request_method request_path request_uri http_user_agent http_dnt http_referer http_accept http_accept_encoding http_accept_language params]
       csv << column_names
       events.each do |event|
         column_values = [
@@ -43,7 +42,7 @@ class Admin::EventsController < Admin::ApplicationController
           event.http_accept,
           event.http_accept_encoding,
           event.http_accept_language,
-          event.params,
+          event.params
         ]
         csv << column_values
       end
@@ -60,7 +59,7 @@ class Admin::EventsController < Admin::ApplicationController
   end
 
   def order
-    %w(asc desc).include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
+    %w[asc desc].include?(params[:order]&.downcase) ? params[:order].downcase : "asc"
   end
 
   def limit
