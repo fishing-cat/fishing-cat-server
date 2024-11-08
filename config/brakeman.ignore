@@ -1,0 +1,52 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 84,
+      "fingerprint": "abf5d1c48b75d83930813fe6de382772c4e4bf75d638f8b6346333033b4111aa",
+      "check_name": "RenderInline",
+      "message": "Unescaped model attribute rendered inline",
+      "file": "app/controllers/fishing_controller.rb",
+      "line": 14,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross-site_scripting/",
+      "code": "render(inline => Campaign.find_by(:cid => params[:cid]).form_template, {})",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "FishingController",
+        "method": "clicked_link"
+      },
+      "user_input": "Campaign.find_by(:cid => params[:cid]).form_template",
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 84,
+      "fingerprint": "ddc6144d6b86befd7280b1f3551bb39741686137c335ce454b8a5c5252d2ef4b",
+      "check_name": "RenderInline",
+      "message": "Unescaped model attribute rendered inline",
+      "file": "app/controllers/fishing_controller.rb",
+      "line": 27,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross-site_scripting/",
+      "code": "render(inline => Campaign.find_by(:cid => params[:cid]).result_template, {})",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "FishingController",
+        "method": "viewed_result"
+      },
+      "user_input": "Campaign.find_by(:cid => params[:cid]).result_template",
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2024-11-09 01:54:15 +0900",
+  "brakeman_version": "6.2.2"
+}
