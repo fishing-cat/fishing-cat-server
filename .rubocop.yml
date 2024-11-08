@@ -93,9 +93,3 @@ Layout/HashAlignment:
 Layout/IndentationConsistency:
   Enabled: true
 
-# Offense count: 15
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: Width, AllowedPatterns.
-Layout/IndentationWidth:
-  Enabled: true
-
