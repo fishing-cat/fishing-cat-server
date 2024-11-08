@@ -12,7 +12,7 @@ class Admin::EventsController < Admin::ApplicationController
       format.json {
         render json: {
           total: @events_count,
-          rows: @events,
+          rows: @events
         }
       }
     end
@@ -42,7 +42,7 @@ class Admin::EventsController < Admin::ApplicationController
           event.http_accept,
           event.http_accept_encoding,
           event.http_accept_language,
-          event.params,
+          event.params
         ]
         csv << column_values
       end

@@ -23,7 +23,7 @@ class Admin::PeopleController < Admin::ApplicationController
       format.json {
         render json: {
           total: @records.size,
-          rows: @records,
+          rows: @records
         }
       }
     end
