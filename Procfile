@@ -1,1 +1,1 @@
-web: ./bin/thrust ./bin/rails server
+web: bin/rails server
