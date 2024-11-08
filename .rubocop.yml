@@ -81,3 +81,6 @@ Layout/HashAlignment:
 Layout/IndentationConsistency:
   Enabled: true
 
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
