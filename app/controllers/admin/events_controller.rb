@@ -16,7 +16,6 @@ class Admin::EventsController < Admin::ApplicationController
         }
       }
     end
-
   end
 
   def send_events_csv(events)

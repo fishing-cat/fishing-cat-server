@@ -84,6 +84,9 @@ Layout/IndentationConsistency:
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
 
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
   Enabled: true
 
